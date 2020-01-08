@@ -10,6 +10,6 @@ module.exports = override(
   }),
   addLessLoader({
     javascriptEnabled: true,
-    modifyVars: aliyunTheme.default,
+    modifyVars: { ...aliyunTheme.default, ...{ '@body-background': '#f9f9f9' } },
   }),
 );
