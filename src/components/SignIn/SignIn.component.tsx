@@ -12,7 +12,7 @@ const SignIn: React.FC<FormComponentProps> = (props) => {
         <Logo></Logo>
       </Row>
       <Row>
-        <Col xl={{ span: 6, offset: 9 }}>
+        <Col xl={{ span: 8, offset: 8 }}>
           <Card title="SIGN IN" className="sign-in-card-content">
             <Form>
               <Form.Item>
@@ -59,16 +59,16 @@ const SignIn: React.FC<FormComponentProps> = (props) => {
       </Row>
 
       <Row>
-        <Col lg={{ span: 6, offset: 9 }} xl={{ span: 6, offset: 9 }} md={{ span: 12, offset: 6 }}>
+        <Col xl={{ span: 8, offset: 8 }}>
           <Card className="privacy-card-content">
-            <Col span={12}>
+            <Col span={9}>
               <Row type="flex" justify="space-around">
                 <a href="">Terms</a>
                 <a href="">Privacy</a>
                 <a href="">Security</a>
               </Row>
             </Col>
-            <Col span={6} offset={6}>
+            <Col span={6} offset={9}>
               <Row type="flex" justify="end">
                 <a href="/join">Create Account</a>
               </Row>

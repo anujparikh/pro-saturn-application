@@ -13,7 +13,7 @@ const SignIn: React.FC<FormComponentProps> = (props) => {
         <Logo></Logo>
       </Row>
       <Row>
-        <Col xl={{ span: 6, offset: 9 }}>
+        <Col xl={{ span: 8, offset: 8 }}>
           <Card title="CREATE ACCOUNT" className="sign-up-card-content">
             <Form>
               <Row>
