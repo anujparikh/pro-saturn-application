@@ -10,11 +10,11 @@ const ProfileMenu: React.FC = () => {
   const { Text } = Typography;
   return (
     <Row>
-      <Col span={6} offset={3}>
+      <Col span={5} offset={4}>
         <Avatar icon="user"></Avatar>
       </Col>
-      <Col span={14} offset={1} className="profile-menu-text">
-        <Text>Anuj Parikh</Text>
+      <Col span={12} className="profile-menu-text">
+        <Text strong>Anuj Parikh</Text>
       </Col>
     </Row>
   );

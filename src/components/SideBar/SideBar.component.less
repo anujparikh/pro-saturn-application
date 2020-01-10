@@ -9,24 +9,21 @@
 
 .side-bar-sider-open {
     border: 0;
-    border-top: 1px solid @primary-color;
 }
 
 .side-bar-container {
-    position: relative;
     height: 100vh;
-    overflow: auto;
+    overflow: hidden;
     position: fixed;
+    width: inherit;
     left: 0;
-    width: 10rem;
     background: @white;
 }
 
 .side-bar-profile {
     position: absolute;
+    width: 100%;
     bottom: 0;
-    width: 10rem;
-    border-top: 1px solid @primary-color;
     margin-bottom: 0.8rem;
     padding-top: 0.8rem;
 }

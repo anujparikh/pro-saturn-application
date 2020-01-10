@@ -1,8 +1,8 @@
 import React from 'react';
-import SideBar from '../components/SideBar/SideBar.component';
+import DashboardContainer from '../components/Dashboard-Container/Dashboard.container';
 
 const Dashboard: React.FC = () => {
-  return <SideBar></SideBar>;
+  return <DashboardContainer></DashboardContainer>;
 };
 
 export default Dashboard;
