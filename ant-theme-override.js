@@ -1,0 +1,15 @@
+module.exports = {
+  '@body-background': '#f9f9f9',
+  '@font-size-base': '11px',
+  '@font-size-sm': '10px',
+  '@input-height-lg': '32px',
+  '@input-height-base': '29px',
+  '@input-height-sm': '21px',
+  '@table-padding-vertical': '13px',
+  '@line-height-base': 1.3715,
+  '@padding-lg': '21px',
+  '@padding-md': '24px',
+  '@padding-sm': '11px',
+  '@padding-xs': '7px',
+  '@layout-sider-background': 'white',
+};

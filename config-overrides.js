@@ -1,6 +1,6 @@
 const { override, fixBabelImports, addLessLoader } = require('customize-cra');
 const aliyunTheme = require('@ant-design/aliyun-theme');
-console.log(aliyunTheme);
+const overrideAntTheme = require('./ant-theme-override');
 
 module.exports = override(
   fixBabelImports('import', {
@@ -10,6 +10,9 @@ module.exports = override(
   }),
   addLessLoader({
     javascriptEnabled: true,
-    modifyVars: { ...aliyunTheme.default, ...{ '@body-background': '#f9f9f9' } },
+    modifyVars: {
+      ...aliyunTheme.default,
+      ...overrideAntTheme,
+    },
   }),
 );
