@@ -5,6 +5,7 @@ import TemplateInfoDisplay from '../TemplateInfoDisplay/TemplateInfoDisplay.comp
 
 //TODO: Add props to TemplateCard component to be reusable across project
 //TODO: Convert Tag to reusable component with props
+// Make Open icon a reusable Icon component
 const TemplateCard: React.FC = () => {
   const { Text } = Typography;
   return (
