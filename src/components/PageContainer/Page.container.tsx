@@ -2,6 +2,7 @@ import React from 'react';
 import SideBar from '../SideBar/SideBar.component';
 import Header from '../Header/Header.component';
 import { Row, Col } from 'antd';
+import Dashboard from '../Dashboard/Dashboard.component';
 
 const DashboardContainer: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const DashboardContainer: React.FC = () => {
       </Col>
       <Col span={21}>
         <Header></Header>
+        <Dashboard></Dashboard>
       </Col>
     </Row>
   );

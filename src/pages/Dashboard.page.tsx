@@ -1,8 +1,8 @@
 import React from 'react';
-import DashboardContainer from '../components/Dashboard-Container/Dashboard.container';
+import PageContainer from '../components/PageContainer/Page.container';
 
 const Dashboard: React.FC = () => {
-  return <DashboardContainer></DashboardContainer>;
+  return <PageContainer></PageContainer>;
 };
 
 export default Dashboard;
