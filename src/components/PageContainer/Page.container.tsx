@@ -1,6 +1,6 @@
 import React from 'react';
 import SideBar from '../SideBar/SideBar.component';
-import Header from '../Header/Header.component';
+import Header from '../../containers/Header';
 import { Row, Col } from 'antd';
 import Dashboard from '../Dashboard/Dashboard.component';
 

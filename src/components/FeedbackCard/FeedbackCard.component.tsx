@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, List, Row, Typography, Icon, Table } from 'antd';
+import { Row, Typography, Icon, Table } from 'antd';
 import './FeedbackCard.component.less';
 
 //TODO: On hover of ellipses show whole text

@@ -1,11 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import './App.component.less';
-import Dashboard from '../../pages/Dashboard.page';
-import Login from '../../pages/Login.page';
-import Join from '../../pages/Join.page';
+import Dashboard from '../../pages/Dashboard';
+import Login from '../../pages/Login';
+import Join from '../../pages/Join';
 
-const App: React.FC = () => {
+const ApplicationRoutes: React.FC = () => {
   return (
     <Router>
       <Switch>
@@ -20,4 +19,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default ApplicationRoutes;

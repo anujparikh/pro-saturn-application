@@ -1,5 +1,5 @@
 import React from 'react';
-import SignIn from '../components/SignIn/SignIn.component';
+import SignIn from '../../components/SignIn/SignIn.component';
 
 const Login: React.FC = () => {
   return <SignIn></SignIn>;
