@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, Icon, Row } from 'antd';
 import './SideBar.component.less';
-import Logo from '../Logo/Logo.component';
+import Logo from '../../r-components/Logo';
 import ProfileMenu from '../ProfileMenu/ProfileMenu.component';
 
 const SideBar: React.FC = () => {
