@@ -1,8 +1,8 @@
 import React from 'react';
 import { Typography, Row, Col } from 'antd';
-import './TemplateInfoDisplay.component.less';
+import './styles.less';
 
-type TemplateInfoDisplayProps = {
+export type TemplateInfoDisplayProps = {
   count: number;
   text: string;
 };

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card, Icon, Row, Col, Typography, Divider, Tag } from 'antd';
 import './styles.less';
-import TemplateInfoDisplay from '../../components/TemplateInfoDisplay/TemplateInfoDisplay.component';
+import { Card, Icon, Row, Col, Typography, Divider, Tag } from 'antd';
+import TemplateInfoDisplay from '../TemplateInfoDisplay';
 
 interface TemplateInfo {
   count: number;
@@ -31,7 +31,7 @@ const TemplateCard: React.FC<TemplateCardPropTypes> = (props) => {
       <Row type="flex" justify="space-around">
         {templateInfo.map((info) => {
           return (
-            <Col>
+            <Col key={info.text}>
               <TemplateInfoDisplay count={info.count} text={info.text}></TemplateInfoDisplay>
             </Col>
           );
@@ -40,7 +40,7 @@ const TemplateCard: React.FC<TemplateCardPropTypes> = (props) => {
       <Divider className="template-divider"></Divider>
       {contentData.map((data) => {
         return (
-          <Row>
+          <Row key={data.title}>
             <Col span={4}>
               <Text className="template-sub-heading" strong>
                 {data.title}
@@ -48,7 +48,9 @@ const TemplateCard: React.FC<TemplateCardPropTypes> = (props) => {
             </Col>
             <Col span={19} offset={1}>
               {data.contents?.map((c) => (
-                <Tag className="template-categories-tag">{c}</Tag>
+                <Tag className="template-categories-tag" key={c}>
+                  {c}
+                </Tag>
               ))}
             </Col>
           </Row>

@@ -33,7 +33,7 @@ const SignIn: React.FC<FormComponentProps> = (props) => {
                 </Col>
                 <Col span={12}>
                   <Row type="flex" justify="end">
-                    <a className="login-form-forgot" href="">
+                    <a className="login-form-forgot" href="#/">
                       Forgot username or password?
                     </a>
                   </Row>
@@ -63,9 +63,9 @@ const SignIn: React.FC<FormComponentProps> = (props) => {
           <Card className="privacy-card-content">
             <Col span={9}>
               <Row type="flex" justify="space-around">
-                <a href="">Terms</a>
-                <a href="">Privacy</a>
-                <a href="">Security</a>
+                <a href="#/">Terms</a>
+                <a href="#/">Privacy</a>
+                <a href="#/">Security</a>
               </Row>
             </Col>
             <Col span={6} offset={9}>

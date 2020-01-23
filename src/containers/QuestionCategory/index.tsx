@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Row, Col, Button } from 'antd';
 import Text from 'antd/lib/typography/Text';
-import TemplateCard from '../../r-components/TemplateCard';
+import QuestionCard from '../../r-components/QuestionCard';
 import dummy from './dummy';
 
 interface CategoryNavigation {
@@ -9,13 +9,13 @@ interface CategoryNavigation {
   href?: string;
 }
 
-export type TemplateCategoryPropTypes = {
+export type QuestionCategoryPropTypes = {
   title: string;
   navigation?: CategoryNavigation;
 };
 
-const TemplateCategory: React.FC<TemplateCategoryPropTypes> = (props) => {
-  const templates = dummy;
+const QuestionCategory: React.FC<QuestionCategoryPropTypes> = (props) => {
+  const catergories = dummy;
   const { title, navigation } = props;
 
   return (
@@ -33,14 +33,10 @@ const TemplateCategory: React.FC<TemplateCategoryPropTypes> = (props) => {
         )}
       </Row>
       <Row>
-        {templates.map((t) => {
+        {catergories.map((t) => {
           return (
-            <Col key={t.id} xl={{ span: 6 }} lg={{ span: 8 }} md={{ span: 12 }} xs={{ span: 24 }}>
-              <TemplateCard
-                title={t.title}
-                templateInfo={t.templateInfo}
-                contentData={t.contentData}
-              ></TemplateCard>
+            <Col key={t.id} xl={{ span: 8 }} md={{ span: 12 }} xs={{ span: 24 }}>
+              <QuestionCard title={t.title} questions={t.questions}></QuestionCard>
             </Col>
           );
         })}
@@ -49,4 +45,4 @@ const TemplateCategory: React.FC<TemplateCategoryPropTypes> = (props) => {
   );
 };
 
-export default TemplateCategory;
+export default QuestionCategory;
