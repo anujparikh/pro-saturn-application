@@ -1,9 +1,9 @@
 import React from 'react';
 import Page from '../../containers/Page';
 import { PagePRPropTypes } from '../../containers/Page';
-import DashboardComponent from '../../components/Dashboard/Dashboard.component';
 import { ButtonPRPropTypes } from '../../r-components/ButtonPR';
 import ButtonPR from '../../r-components/ButtonPR';
+import DisplayComponent from './components/DisplayComponent';
 
 const Dashboard: React.FC = () => {
   const buttonPRProps: ButtonPRPropTypes = {
@@ -13,7 +13,7 @@ const Dashboard: React.FC = () => {
   const pageProps: PagePRPropTypes = {
     headerTitle: 'Dashboard',
     headerExtra: <ButtonPR {...buttonPRProps}></ButtonPR>,
-    displayComponent: <DashboardComponent></DashboardComponent>,
+    displayComponent: <DisplayComponent></DisplayComponent>,
   };
   return <Page {...pageProps}></Page>;
 };
