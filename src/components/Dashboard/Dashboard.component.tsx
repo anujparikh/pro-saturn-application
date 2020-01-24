@@ -1,7 +1,4 @@
 import React from 'react';
-import { Row, Col, Card } from 'antd';
-import InterviewCard from '../InterviewCard/InterviewCard.component';
-import FeedbackCard from '../FeedbackCard/FeedbackCard.component';
 import TemplateCategory from '../../containers/TemplateCategory';
 import './Dashboard.component.less';
 import QuestionCategory from '../../containers/QuestionCategory';
@@ -10,14 +7,14 @@ const Dashboard: React.FC = () => {
   return (
     <div className="dashboard-content-div">
       <TemplateCategory
-        title="Top used templates"
+        title="Favorites templates"
         navigation={{ text: 'show more...' }}
       ></TemplateCategory>
       <QuestionCategory
         title="Top categories questions"
         navigation={{ text: 'show more...' }}
       ></QuestionCategory>
-      <Card size="small">
+      {/* <Card size="small">
         <Row type="flex" justify="space-between">
           <Col
             xl={{ span: 11 }}
@@ -38,7 +35,7 @@ const Dashboard: React.FC = () => {
             <FeedbackCard></FeedbackCard>
           </Col>
         </Row>
-      </Card>
+      </Card> */}
     </div>
   );
 };

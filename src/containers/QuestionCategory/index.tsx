@@ -3,6 +3,7 @@ import { Card, Row, Col, Button } from 'antd';
 import Text from 'antd/lib/typography/Text';
 import QuestionCard from '../../r-components/QuestionCard';
 import dummy from './dummy';
+import './index.less';
 
 interface CategoryNavigation {
   text: string;
@@ -19,7 +20,7 @@ const QuestionCategory: React.FC<QuestionCategoryPropTypes> = (props) => {
   const { title, navigation } = props;
 
   return (
-    <Card size="small">
+    <Card className="question-category" size="small">
       <Row type="flex" justify="space-between">
         <Col>
           <Text strong>{title}</Text>

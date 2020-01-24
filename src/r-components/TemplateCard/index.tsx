@@ -1,7 +1,7 @@
 import React from 'react';
-import './styles.less';
 import { Card, Icon, Row, Col, Typography, Divider, Tag } from 'antd';
 import TemplateInfoDisplay from '../TemplateInfoDisplay';
+import './index.less';
 
 interface TemplateInfo {
   count: number;
@@ -27,7 +27,7 @@ const TemplateCard: React.FC<TemplateCardPropTypes> = (props) => {
   const { Text } = Typography;
   const { title, templateInfo, contentData } = props;
   return (
-    <Card className="template-card" size="small" title={title} extra={<Icon type="login" />}>
+    <Card size="small" className="template-card" title={title} extra={<Icon type="login" />}>
       <Row type="flex" justify="space-around">
         {templateInfo.map((info) => {
           return (

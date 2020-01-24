@@ -1,7 +1,7 @@
 import React from 'react';
 import textLogo from '../../assets/images/logo-blue.png';
 import onlyLogo from '../../assets/images/logo-only.png';
-import './styles.less';
+import './index.less';
 
 export type LogoPropTypes = {
   hideText?: boolean;

@@ -11,7 +11,7 @@ module.exports = override(
   addLessLoader({
     javascriptEnabled: true,
     modifyVars: {
-      ...aliyunTheme.default,
+      ...aliyunTheme,
       ...overrideAntTheme,
     },
   }),
