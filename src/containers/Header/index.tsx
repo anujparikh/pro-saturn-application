@@ -1,22 +1,14 @@
 import React from 'react';
 import { PageHeader } from 'antd';
-import ButtonPR from '../../r-components/ButtonPR';
+import { PageHeaderProps } from 'antd/lib/page-header';
 
-//TODO: Use reusable TAG component inplace of button
-const Header: React.FC = () => {
-  const buttonPRProps = {
-    badgeProps: { dot: true, offset: [-3, 3] as [number, number], status: 'warning' as 'warning' },
-    buttonProps: { shape: 'round' as 'round', size: 'small' as 'small' },
-    title: 'Pending Feedback',
-  };
-  return (
-    <PageHeader
-      backIcon={false}
-      ghost={false}
-      title="Dashboard"
-      extra={<ButtonPR {...buttonPRProps}></ButtonPR>}
-    ></PageHeader>
-  );
+const Header: React.FC<PageHeaderProps> = (props) => {
+  return <PageHeader {...props}></PageHeader>;
+};
+
+Header.defaultProps = {
+  ghost: false,
+  backIcon: false,
 };
 
 export default Header;

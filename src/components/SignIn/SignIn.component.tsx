@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Form, Input, Icon, Checkbox, Button, Row, Col } from 'antd';
 import './SignIn.component.less';
 import { FormComponentProps } from 'antd/lib/form';
-import Logo from '../Logo/Logo.component';
+import Logo from '../../r-components/Logo';
 
 const SignIn: React.FC<FormComponentProps> = (props) => {
   const { getFieldDecorator } = props.form;
@@ -33,7 +33,7 @@ const SignIn: React.FC<FormComponentProps> = (props) => {
                 </Col>
                 <Col span={12}>
                   <Row type="flex" justify="end">
-                    <a className="login-form-forgot" href="">
+                    <a className="login-form-forgot" href="#/">
                       Forgot username or password?
                     </a>
                   </Row>
@@ -63,9 +63,9 @@ const SignIn: React.FC<FormComponentProps> = (props) => {
           <Card className="privacy-card-content">
             <Col span={9}>
               <Row type="flex" justify="space-around">
-                <a href="">Terms</a>
-                <a href="">Privacy</a>
-                <a href="">Security</a>
+                <a href="#/">Terms</a>
+                <a href="#/">Privacy</a>
+                <a href="#/">Security</a>
               </Row>
             </Col>
             <Col span={6} offset={9}>
