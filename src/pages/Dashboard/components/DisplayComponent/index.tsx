@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import TemplateCategory from '../../../../containers/TemplateCategory';
 import QuestionCategory from '../../../../containers/QuestionCategory';
 import ActionsCategory from '../../../../containers/ActionsCategory';
 import './index.less';
 
-const DisplayComponent: React.FC = () => {
+const DisplayComponent: FC = () => {
   return (
     <div className="dashboard-content-div">
       <TemplateCategory

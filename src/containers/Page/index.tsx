@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import SideBar from '../../components/SideBar/SideBar.component';
 import Header from '../../containers/Header';
 import { Row, Col } from 'antd';
@@ -9,7 +9,7 @@ export type PagePRPropTypes = {
   displayComponent?: React.ReactNode;
 };
 
-const Page: React.FC<PagePRPropTypes> = (props) => {
+const Page: FC<PagePRPropTypes> = (props) => {
   const { headerTitle, headerExtra, displayComponent } = props;
 
   return (

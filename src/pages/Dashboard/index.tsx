@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Page from '../../containers/Page';
 import { PagePRPropTypes } from '../../containers/Page';
 import { ButtonPRPropTypes } from '../../r-components/ButtonPR';
 import ButtonPR from '../../r-components/ButtonPR';
 import DisplayComponent from './components/DisplayComponent';
 
-const Dashboard: React.FC = () => {
+const Dashboard: FC = () => {
   const buttonPRProps: ButtonPRPropTypes = {
     title: 'Pending Feedback',
     buttonProps: { shape: 'round' as 'round', size: 'small' as 'small' },

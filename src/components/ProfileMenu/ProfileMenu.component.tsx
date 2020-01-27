@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './ProfileMenu.component.less';
 import { Avatar, Row, Col, Typography } from 'antd';
 
@@ -6,7 +6,7 @@ import { Avatar, Row, Col, Typography } from 'antd';
  * TODO:
  * - Add props to make component show just avatar
  */
-const ProfileMenu: React.FC = () => {
+const ProfileMenu: FC = () => {
   const { Text } = Typography;
   return (
     <Row>

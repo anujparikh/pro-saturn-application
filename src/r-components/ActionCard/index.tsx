@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Row, Typography, Icon, Table } from 'antd';
 import './index.less';
 
@@ -15,7 +15,7 @@ export type ActionCardPropTypes = {
 
 //TODO: On hover of ellipses show whole text
 //TODO: Make a reusable component for both feedback and interviews
-const ActionCard: React.FC<ActionCardPropTypes> = ({ title, columns, data }) => {
+const ActionCard: FC<ActionCardPropTypes> = ({ title, columns, data }) => {
   const { Text } = Typography;
   return (
     <div className="action-card">
@@ -26,7 +26,12 @@ const ActionCard: React.FC<ActionCardPropTypes> = ({ title, columns, data }) => 
       <div className="feedback-table">
         <Table
           tableLayout="fixed"
-          columns={columns.map((c) => ({ ...c, ellipsis: true, className: 'feedback-table' }))}
+          columns={columns.map((c) => ({
+            ...c,
+            align: 'center',
+            ellipsis: true,
+            className: 'feedback-table',
+          }))}
           size="small"
           dataSource={data}
           pagination={false}

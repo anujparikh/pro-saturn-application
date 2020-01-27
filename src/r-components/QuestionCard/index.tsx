@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Card, List, Row, Typography, Icon } from 'antd';
 import './index.less';
 
@@ -8,7 +8,7 @@ export type QuestionCardPropTypes = {
 };
 
 //TODO: On hover of ellipses show whole text
-const QuestionCard: React.FC<QuestionCardPropTypes> = (props) => {
+const QuestionCard: FC<QuestionCardPropTypes> = (props) => {
   const { title, questions } = props;
   const { Text } = Typography;
   return (

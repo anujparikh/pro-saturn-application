@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Menu, Icon, Row } from 'antd';
 import './SideBar.component.less';
 import Logo from '../../r-components/Logo';
 import ProfileMenu from '../ProfileMenu/ProfileMenu.component';
 
-const SideBar: React.FC = () => {
+const SideBar: FC = () => {
   return (
     <div className="side-bar-container">
       <Row type="flex" justify="center">

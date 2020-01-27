@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Card, Form, Input, Icon, Button, Row, Col, Typography } from 'antd';
 import './SignUp.component.less';
 import { FormComponentProps } from 'antd/lib/form';
 import Logo from '../../r-components/Logo';
 
-const SignIn: React.FC<FormComponentProps> = (props) => {
+const SignIn: FC<FormComponentProps> = (props) => {
   const { getFieldDecorator } = props.form;
   const { Text } = Typography;
   return (

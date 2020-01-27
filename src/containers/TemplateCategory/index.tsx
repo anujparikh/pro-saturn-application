@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Card, Row, Col, Button } from 'antd';
 import Text from 'antd/lib/typography/Text';
 import TemplateCard from '../../r-components/TemplateCard';
@@ -15,7 +15,7 @@ export type TemplateCategoryPropTypes = {
   navigation?: CategoryNavigation;
 };
 
-const TemplateCategory: React.FC<TemplateCategoryPropTypes> = (props) => {
+const TemplateCategory: FC<TemplateCategoryPropTypes> = (props) => {
   const templates = dummy;
   const { title, navigation } = props;
 

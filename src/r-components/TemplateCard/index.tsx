@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Card, Icon, Row, Col, Typography, Divider, Tag } from 'antd';
 import TemplateInfoDisplay from '../TemplateInfoDisplay';
 import './index.less';
@@ -23,7 +23,7 @@ export type TemplateCardPropTypes = {
 
 //TODO: Convert Tag to reusable component with props
 // Make Open icon a reusable Icon component
-const TemplateCard: React.FC<TemplateCardPropTypes> = (props) => {
+const TemplateCard: FC<TemplateCardPropTypes> = (props) => {
   const { Text } = Typography;
   const { title, templateInfo, contentData } = props;
   return (

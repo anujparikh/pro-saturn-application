@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import SignUp from '../../components/SignUp/SignUp.component';
 
-const Join: React.FC = () => {
+const Join: FC = () => {
   return (
     <div className="App">
       <SignUp></SignUp>
