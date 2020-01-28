@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import ApplicationRoutes from './global/Routes';
 
-const App: React.FC = () => {
+const App: FC = () => {
   return <ApplicationRoutes></ApplicationRoutes>;
 };
 

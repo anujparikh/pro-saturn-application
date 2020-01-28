@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Card, Row, Col, Button } from 'antd';
 import Text from 'antd/lib/typography/Text';
-import QuestionCard from '../../r-components/QuestionCard';
+import QuestionCard from '../../components/QuestionCard';
 import dummy from './dummy';
 import './index.less';
 
@@ -15,7 +15,7 @@ export type QuestionCategoryPropTypes = {
   navigation?: CategoryNavigation;
 };
 
-const QuestionCategory: React.FC<QuestionCategoryPropTypes> = (props) => {
+const QuestionCategory: FC<QuestionCategoryPropTypes> = (props) => {
   const catergories = dummy;
   const { title, navigation } = props;
 

@@ -2,28 +2,6 @@ export default [
   {
     type: 'upcoming',
     title: 'Upcoming Interviews',
-    columns: [
-      {
-        title: 'Cadidate Name',
-        dataIndex: 'name',
-      },
-      {
-        title: 'Role',
-        dataIndex: 'role',
-      },
-      {
-        title: 'Date - Time',
-        dataIndex: 'dateTime',
-      },
-      {
-        title: 'Duration',
-        dataIndex: 'duration',
-      },
-      {
-        title: '# Categories',
-        dataIndex: 'noOfCategories',
-      },
-    ],
     data: [
       {
         key: '1',
@@ -70,28 +48,6 @@ export default [
   {
     type: 'pending',
     title: 'Pending Feedback',
-    columns: [
-      {
-        title: 'Cadidate Name',
-        dataIndex: 'name',
-        width: '25%',
-      },
-      {
-        title: 'Role',
-        dataIndex: 'role',
-        width: '25%',
-      },
-      {
-        title: 'Date - Time',
-        dataIndex: 'dateTime',
-        width: '25%',
-      },
-      {
-        title: 'Overall Feedback',
-        dataIndex: 'feedback',
-        width: '25%',
-      },
-    ],
     data: [
       {
         key: '1',

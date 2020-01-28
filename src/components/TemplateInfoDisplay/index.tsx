@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Typography, Row, Col } from 'antd';
 import './styles.less';
 
@@ -7,7 +7,7 @@ export type TemplateInfoDisplayProps = {
   text: string;
 };
 
-const TemplateInfoDisplay: React.FC<TemplateInfoDisplayProps> = ({
+const TemplateInfoDisplay: FC<TemplateInfoDisplayProps> = ({
   count,
   text,
 }: TemplateInfoDisplayProps) => {

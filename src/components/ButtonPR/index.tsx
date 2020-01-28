@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Button } from 'antd';
 import { ButtonProps } from 'antd/lib/button';
 import Badge, { BadgeProps } from 'antd/lib/badge';
@@ -10,7 +10,7 @@ export type ButtonPRPropTypes = {
   badgeProps?: BadgeProps;
 };
 
-const ButtonPR: React.FC<ButtonPRPropTypes> = ({ title, showBadge, buttonProps, badgeProps }) => {
+const ButtonPR: FC<ButtonPRPropTypes> = ({ title, showBadge, buttonProps, badgeProps }) => {
   if (showBadge) {
     return (
       <Badge {...badgeProps}>

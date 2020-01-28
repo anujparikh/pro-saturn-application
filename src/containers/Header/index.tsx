@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { PageHeader } from 'antd';
 import { PageHeaderProps } from 'antd/lib/page-header';
 
-const Header: React.FC<PageHeaderProps> = (props) => {
+const Header: FC<PageHeaderProps> = (props) => {
   return <PageHeader {...props}></PageHeader>;
 };
 

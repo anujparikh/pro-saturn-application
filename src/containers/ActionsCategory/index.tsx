@@ -1,47 +1,24 @@
-import React from 'react';
-import { Card, Row, Col, Button } from 'antd';
-import Text from 'antd/lib/typography/Text';
-import ActionCard from '../../r-components/ActionCard';
+import React, { FC } from 'react';
+import { Card, Col } from 'antd';
+import ActionCard from '../../components/ActionCard';
 import dummy from './dummy';
+import columns from './table-columns';
 import './index.less';
 
-interface CategoryNavigation {
-  text: string;
-  href?: string;
-}
-
-export type ActionsCategoryPropTypes = {
-  title?: string;
-  navigation?: CategoryNavigation;
-};
-
-const ActionsCategory: React.FC<ActionsCategoryPropTypes> = (props) => {
+const ActionsCategory: FC = () => {
   const actionsData = dummy;
-  const { title, navigation } = props;
-
   return (
     <Card size="small">
-      <Row type="flex" justify="space-between">
-        <Col>
-          <Text strong>{title}</Text>
-        </Col>
-        {navigation && (
-          <Col>
-            <Button size="small" type="link" href={navigation.href}>
-              <Text type="secondary">{navigation.text}</Text>
-            </Button>
-          </Col>
-        )}
-      </Row>
-      <Row>
-        {actionsData.map((a) => {
-          return (
-            <Col key={a.type} xl={{ span: 12 }} sm={{ span: 24 }}>
-              <ActionCard title={a.title} columns={a.columns} data={a.data}></ActionCard>
+      {columns.map((column) => {
+        const data = actionsData.find((a) => a.type === column.type);
+        return (
+          data && (
+            <Col key={column.type} xl={{ span: 12 }} sm={{ span: 24 }}>
+              <ActionCard title={data.title} columns={column.columns} data={data.data}></ActionCard>
             </Col>
-          );
-        })}
-      </Row>
+          )
+        );
+      })}
     </Card>
   );
 };

@@ -1,7 +1,7 @@
-import React from 'react';
-import SignIn from '../../components/SignIn/SignIn.component';
+import React, { FC } from 'react';
+import SignIn from '../../components/SignIn';
 
-const Login: React.FC = () => {
+const Login: FC = () => {
   return <SignIn></SignIn>;
 };
 
