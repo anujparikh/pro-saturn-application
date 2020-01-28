@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Card, Row, Col, Button } from 'antd';
 import Text from 'antd/lib/typography/Text';
-import TemplateCard from '../../r-components/TemplateCard';
+import TemplateCard from '../../components/TemplateCard';
 import dummy from './dummy';
 import './index.less';
 

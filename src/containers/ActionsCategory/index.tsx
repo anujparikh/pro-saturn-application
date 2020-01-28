@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Card, Col } from 'antd';
-import ActionCard from '../../r-components/ActionCard';
+import ActionCard from '../../components/ActionCard';
 import dummy from './dummy';
 import columns from './table-columns';
 import './index.less';

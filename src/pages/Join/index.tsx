@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import SignUp from '../../components/SignUp/SignUp.component';
+import SignUp from '../../components/SignUp';
 
 const Join: FC = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import SideBar from '../../r-components/SideBar';
+import SideBar from '../../components/SideBar';
 import Header from '../../containers/Header';
 import { Row, Col } from 'antd';
 

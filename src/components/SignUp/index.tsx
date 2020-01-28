@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Card, Form, Input, Icon, Button, Row, Col, Typography } from 'antd';
-import './SignUp.component.less';
+import './index.less';
 import { FormComponentProps } from 'antd/lib/form';
-import Logo from '../../r-components/Logo';
+import Logo from '../Logo';
 
 const SignIn: FC<FormComponentProps> = (props) => {
   const { getFieldDecorator } = props.form;
@@ -83,7 +83,7 @@ const SignIn: FC<FormComponentProps> = (props) => {
                 </Col>
                 <Col className="login-link" span={9} offset={1}>
                   <a href="/login">
-                    <Text strong>Sign in instead</Text>
+                    <Text strong>Go to Sign In</Text>
                   </a>
                 </Col>
               </Row>

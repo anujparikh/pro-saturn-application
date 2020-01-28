@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Card, Form, Input, Icon, Checkbox, Button, Row, Col } from 'antd';
-import './SignIn.component.less';
+import './index.less';
 import { FormComponentProps } from 'antd/lib/form';
-import Logo from '../../r-components/Logo';
+import Logo from '../Logo';
 
 const SignIn: FC<FormComponentProps> = (props) => {
   const { getFieldDecorator } = props.form;
