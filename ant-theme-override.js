@@ -1,7 +1,7 @@
 module.exports = {
   '@body-background': '#f9f9f9',
-  '@font-size-base': '12px',
-  '@font-size-sm': '10px',
+  '@font-size-base': '13px',
+  '@font-size-sm': '11px',
   '@input-height-lg': '32px',
   '@input-height-base': '29px',
   '@input-height-sm': '21px',

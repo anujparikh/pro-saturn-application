@@ -28,10 +28,10 @@ const TemplateCard: FC<TemplateCardPropTypes> = (props) => {
   const { title, templateInfo, contentData } = props;
   return (
     <Card size="small" className="template-card" title={title} extra={<Icon type="login" />}>
-      <Row type="flex" justify="space-around">
+      <Row>
         {templateInfo.map((info) => {
           return (
-            <Col key={info.text}>
+            <Col span={8} key={info.text}>
               <TemplateInfoDisplay count={info.count} text={info.text}></TemplateInfoDisplay>
             </Col>
           );
@@ -46,7 +46,7 @@ const TemplateCard: FC<TemplateCardPropTypes> = (props) => {
                 {data.title}
               </Text>
             </Col>
-            <Col span={19} offset={1}>
+            <Col span={18} offset={2}>
               {data.contents?.map((c) => (
                 <Tag className="template-categories-tag" key={c}>
                   {c}
