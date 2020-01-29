@@ -17,18 +17,22 @@ const Page: FC<PagePRPropTypes> = (props) => {
       {
         iconName: 'dashboard',
         title: 'Dashboard',
+        route: '/dashboard',
       },
       {
         iconName: 'snippets',
         title: 'Templates',
+        route: '/templates',
       },
       {
         iconName: 'question-circle',
         title: 'Questions',
+        route: '/dashboard',
       },
       {
         iconName: 'usergroup-add',
         title: 'Feedbacks',
+        route: '/dashboard',
       },
     ],
   };

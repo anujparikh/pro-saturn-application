@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Dashboard from '../../pages/Dashboard';
 import Login from '../../pages/Login';
 import Join from '../../pages/Join';
+import Templates from '../../pages/Templates';
 
 const ApplicationRoutes: FC = () => {
   return (
@@ -14,6 +15,7 @@ const ApplicationRoutes: FC = () => {
         <Route path="/login" component={Login} exact></Route>
         <Route path="/join" component={Join} exact></Route>
         <Route path="/dashboard" component={Dashboard} exact></Route>
+        <Route path="/templates" component={Templates} exact></Route>
       </Switch>
     </Router>
   );
