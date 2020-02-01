@@ -7,8 +7,9 @@ import DisplayComponent from './components/DisplayComponent';
 
 const Dashboard: FC = () => {
   const buttonPRProps: ButtonPRPropTypes = {
-    title: 'Add template',
-    buttonProps: { size: 'small' as 'small' },
+    title: 'Add Template',
+    buttonProps: { type: 'primary' },
+    showBadge: false,
   };
   const pageProps: PagePRPropTypes = {
     headerTitle: 'Templates',

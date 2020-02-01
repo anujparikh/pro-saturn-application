@@ -30,6 +30,11 @@ const Page: FC<PagePRPropTypes> = (props) => {
         route: '/dashboard',
       },
       {
+        iconName: 'reconciliation',
+        title: 'Interviews',
+        route: '/dashboard',
+      },
+      {
         iconName: 'usergroup-add',
         title: 'Feedbacks',
         route: '/dashboard',
