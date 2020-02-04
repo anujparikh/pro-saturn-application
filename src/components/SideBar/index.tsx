@@ -7,6 +7,7 @@ import ProfileMenu from '../ProfileMenu';
 type menuItem = {
   iconName: string;
   title: string;
+  route: string;
 };
 
 export type SideBarPropTypes = {
@@ -29,8 +30,10 @@ const SideBar: FC<SideBarPropTypes> = ({ menuItems }) => {
         >
           {menuItems.map((item) => (
             <Menu.Item key={item.title}>
-              <Icon type={item.iconName} />
-              <span className="nav-text">{item.title}</span>
+              <a href={item.route}>
+                <Icon type={item.iconName} />
+                <span className="nav-text">{item.title}</span>
+              </a>
             </Menu.Item>
           ))}
         </Menu>
