@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
-import { Row, Col, Input, Select, Card, Icon } from 'antd';
+import { Row, Col, Input, Select, Icon } from 'antd';
 import './index.less';
 
 export type SearchSortAndFilterPropTypes = {
+  searchPlaceholder: string;
+  filterPlaceholder: string;
   roleTypes?: string[];
   categoryTypes?: string[];
   onChangeOfSortBy?: () => void;
@@ -14,42 +16,40 @@ export type SearchSortAndFilterPropTypes = {
 const SearchSortAndFilter: FC<SearchSortAndFilterPropTypes> = (props) => {
   const { Search } = Input;
   const { Option, OptGroup } = Select;
-  const { roleTypes = [], categoryTypes = [] } = props;
+  const { roleTypes = [], categoryTypes = [], searchPlaceholder, filterPlaceholder } = props;
 
   return (
-    <Card>
-      <Row>
-        <Col span={15}>
-          <Search placeholder="search templates"></Search>
-        </Col>
-        <Col span={7} offset={1}>
-          <Select
-            className="filter-select"
-            mode="tags"
-            placeholder="filter templates by roles and categories"
-            suffixIcon={<Icon type="delete" />}
-          >
-            <OptGroup label="Roles">
-              {roleTypes.map((role) => (
-                <Option key={role} value={role}>
-                  {role}
-                </Option>
-              ))}
-            </OptGroup>
-            <OptGroup label="Categories">
-              {categoryTypes.map((category) => (
-                <Option key={category} value={category}>
-                  {category}
-                </Option>
-              ))}
-            </OptGroup>
-          </Select>
-        </Col>
-        <Col span={1}>
-          <Icon className="clear-filters-icon" type="delete" />
-        </Col>
-      </Row>
-    </Card>
+    <Row>
+      <Col span={15}>
+        <Search placeholder={searchPlaceholder}></Search>
+      </Col>
+      <Col span={7} offset={1}>
+        <Select
+          className="filter-select"
+          mode="tags"
+          placeholder={filterPlaceholder}
+          suffixIcon={<Icon type="delete" />}
+        >
+          <OptGroup label="Roles">
+            {roleTypes.map((role) => (
+              <Option key={role} value={role}>
+                {role}
+              </Option>
+            ))}
+          </OptGroup>
+          <OptGroup label="Categories">
+            {categoryTypes.map((category) => (
+              <Option key={category} value={category}>
+                {category}
+              </Option>
+            ))}
+          </OptGroup>
+        </Select>
+      </Col>
+      <Col span={1}>
+        <Icon className="clear-filters-icon" type="delete" />
+      </Col>
+    </Row>
   );
 };
 

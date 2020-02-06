@@ -1,6 +1,4 @@
 import { templateDataType } from './dummy';
-import { Tag } from 'antd';
-import { TagProps } from 'antd/lib/tag/index';
 export default [
   {
     title: 'Actions',
