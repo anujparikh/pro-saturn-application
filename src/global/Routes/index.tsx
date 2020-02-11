@@ -4,6 +4,7 @@ import Dashboard from '../../pages/Dashboard';
 import Login from '../../pages/Login';
 import Join from '../../pages/Join';
 import Templates from '../../pages/Templates';
+import Questions from '../../pages/Questions';
 
 const ApplicationRoutes: FC = () => {
   return (
@@ -16,6 +17,7 @@ const ApplicationRoutes: FC = () => {
         <Route path="/join" component={Join} exact></Route>
         <Route path="/dashboard" component={Dashboard} exact></Route>
         <Route path="/templates" component={Templates} exact></Route>
+        <Route path="/questions" component={Questions} exact></Route>
       </Switch>
     </Router>
   );

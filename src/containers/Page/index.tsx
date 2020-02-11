@@ -27,7 +27,7 @@ const Page: FC<PagePRPropTypes> = (props) => {
       {
         iconName: 'question-circle',
         title: 'Questions',
-        route: '/dashboard',
+        route: '/questions',
       },
       {
         iconName: 'reconciliation',
