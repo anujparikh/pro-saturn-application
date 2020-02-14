@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { getAllQuestions } from '../../services/Question/actions';
 
 const QuestionsList: FC = (props: any) => {
-  const { questionsData, getAllQuestions } = props;
+  const { questionsData, isLoading, getAllQuestions } = props;
   useEffect(() => {
     getAllQuestions();
   }, [getAllQuestions]);
@@ -38,6 +38,7 @@ const QuestionsList: FC = (props: any) => {
       </Card>
       <Card className="template-table-card">
         <Table
+          loading={isLoading}
           size="small"
           pagination={{ pageSize: 15 }}
           columns={columns.map((c) => ({
@@ -53,9 +54,9 @@ const QuestionsList: FC = (props: any) => {
 
 const mapStateToProps = (state: any) => {
   const {
-    question: { questions: questionsData },
+    question: { questions: questionsData, isLoading },
   } = state;
-  return { questionsData };
+  return { questionsData, isLoading };
 };
 
 const mapDispatchToProps = (dispatch: any) => ({
