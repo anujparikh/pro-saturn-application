@@ -1,9 +1,15 @@
 export default [
   {
+    title: 'Title',
+    dataIndex: 'title',
+    key: 'title',
+    width: '15%',
+  },
+  {
     title: 'Description',
     dataIndex: 'description',
     key: 'description',
-    width: '50%',
+    width: '40%',
   },
   {
     title: 'Difficultly',
@@ -15,7 +21,7 @@ export default [
     title: 'Categories',
     dataIndex: 'categories',
     key: 'duration',
-    width: '30%',
+    width: '25%',
     render: (categories: string[]) => {
       return categories.join(', ');
     },
