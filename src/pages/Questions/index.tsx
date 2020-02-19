@@ -7,7 +7,7 @@ import DisplayComponent from './components/DisplayComponent';
 
 const Questions: FC = () => {
   const buttonPRProps: ButtonPRPropTypes = {
-    title: 'Add Question',
+    title: 'Add Questions',
     buttonProps: { type: 'primary' },
     showBadge: false,
   };

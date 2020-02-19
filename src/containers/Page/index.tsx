@@ -5,7 +5,7 @@ import { Row, Col } from 'antd';
 
 export type PagePRPropTypes = {
   headerTitle: string;
-  headerExtra: React.ReactNode;
+  headerExtra?: React.ReactNode;
   displayComponent?: React.ReactNode;
 };
 

@@ -3,7 +3,8 @@ import { questionsActionTypes } from './action-types';
 export interface IQuestionModel {
   id: number;
   title: string;
-  description: string;
+  description?: string;
+  solution?: string;
   difficultyLevel: string;
   categories: string[];
   frequency: number;
