@@ -18,6 +18,7 @@ export interface IQuestionModel {
 export interface IQuestionState {
   isLoading: boolean;
   count: number;
+  unsavedQuestions: IQuestionModel[];
   questions: IQuestionModel[];
 }
 

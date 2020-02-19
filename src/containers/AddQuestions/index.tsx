@@ -1,23 +1,26 @@
 import React, { FC } from 'react';
 import './index.less';
 import AddQuestion from '../../components/AddQuestion';
-import { Row, Col, Button } from 'antd';
+import { connect } from 'react-redux';
 
-const AddQuestions: FC = () => {
+const AddQuestions: FC = (props: any) => {
+  const { unsavedQuestions } = props;
+
   return (
     <div className="add-questions-container">
+      {unsavedQuestions.map(() => (
+        <AddQuestion showSubmitButtons={false}></AddQuestion>
+      ))}
       <AddQuestion></AddQuestion>
-      <AddQuestion></AddQuestion>
-      <Row className="add-questions-button-group" type="flex" justify="space-between">
-        <Col>
-          <Button>Add more questions</Button>
-        </Col>
-        <Col>
-          <Button type="primary">Save Questions</Button>
-        </Col>
-      </Row>
     </div>
   );
 };
 
-export default AddQuestions;
+const mapStateToProps = (state: any) => {
+  const {
+    questions: { unsavedQuestions },
+  } = state;
+  return { unsavedQuestions };
+};
+
+export default connect(mapStateToProps)(AddQuestions);

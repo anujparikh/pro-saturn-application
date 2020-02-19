@@ -4,6 +4,7 @@ import { questionsActionTypes } from './action-types';
 const initialState: IQuestionState = {
   isLoading: false,
   count: 0,
+  unsavedQuestions: [],
   questions: [],
 };
 
@@ -27,11 +28,11 @@ export const questionsReducer = (state: IQuestionState = initialState, action: a
         questions: action.payload,
       };
     }
-    case questionsActionTypes.ADD: {
+    case questionsActionTypes.ADD_UNSAVED: {
       return {
         ...state,
         count: state.count + 1,
-        questions: [...state.questions, action.payload],
+        unsavedQuestions: [...state.unsavedQuestions, action.payload],
       };
     }
     case questionsActionTypes.DELETE: {
