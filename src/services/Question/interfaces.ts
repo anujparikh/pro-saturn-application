@@ -1,13 +1,18 @@
 import { questionsActionTypes } from './action-types';
 
+export enum DifficultyLevels {
+  Easy = 'EASY',
+  Medium = 'MEDIUM',
+  Hard = 'HARD',
+}
 export interface IQuestionModel {
   id: number;
   title: string;
-  description?: string;
+  question?: string;
   solution?: string;
-  difficultyLevel: string;
+  difficultyLevel: DifficultyLevels;
   categories: string[];
-  frequency: number;
+  frequency?: number;
 }
 
 export interface IQuestionState {

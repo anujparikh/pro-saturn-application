@@ -7,7 +7,7 @@ const initialState: IQuestionState = {
   questions: [],
 };
 
-export const questionReducer = (state: IQuestionState = initialState, action: any) => {
+export const questionsReducer = (state: IQuestionState = initialState, action: any) => {
   switch (action.type) {
     case questionsActionTypes.LOADING: {
       return {
