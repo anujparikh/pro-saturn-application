@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import './index.less';
-import AddQuestion from '../../components/AddQuestion';
+import AddQuestion from '../AddQuestion';
 import { connect } from 'react-redux';
 
 const AddQuestions: FC = (props: any) => {

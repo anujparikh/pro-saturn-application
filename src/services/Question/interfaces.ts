@@ -1,9 +1,9 @@
 import { questionsActionTypes } from './action-types';
 
 export enum DifficultyLevels {
-  Easy = 'EASY',
-  Medium = 'MEDIUM',
-  Hard = 'HARD',
+  Easy = 'Easy',
+  Medium = 'Medium',
+  Hard = 'Hard',
 }
 export interface IQuestionModel {
   id: number;
