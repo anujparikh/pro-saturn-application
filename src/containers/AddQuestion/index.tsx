@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Form, Row, Col, Button } from 'antd';
+import { Form } from 'antd';
 import './index.less';
 import { connect } from 'react-redux';
 import { IQuestionModel, DifficultyLevels } from '../../services/Question/interfaces';
@@ -12,11 +12,12 @@ export interface AddQuestionProps extends FormComponentProps {
 }
 
 const AddQuestion: FC<AddQuestionProps> = (props: any) => {
-  const { showSubmitButtons, addUnsavedQuestion } = props;
+  const { addUnsavedQuestion } = props;
   const { getFieldDecorator } = props.form;
 
   const unsavedQuestion: IQuestionModel = {
     id: 234,
+    key: Math.random() * 100,
     title: 'Foo',
     question: 'FooBar',
     difficultyLevel: DifficultyLevels.Easy,
@@ -37,16 +38,6 @@ const AddQuestion: FC<AddQuestionProps> = (props: any) => {
   return (
     <Form onSubmit={addQuestion}>
       <AddQuestionComponent getFieldDecorator={getFieldDecorator}></AddQuestionComponent>
-      {showSubmitButtons && (
-        <Row className="add-questions-button-group" type="flex" justify="space-between">
-          <Col>
-            <Button htmlType="submit">Add more questions</Button>
-          </Col>
-          <Col>
-            <Button type="primary">Save Questions</Button>
-          </Col>
-        </Row>
-      )}
     </Form>
   );
 };

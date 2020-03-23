@@ -3,6 +3,7 @@ import { IQuestionModel, DifficultyLevels } from './interfaces';
 export const dummyQuestions: IQuestionModel[] = [
   {
     id: 1,
+    key: Math.random() * 100,
     title: 'Operations on DS',
     question: 'What are the various operations that can be performed on different Data Structures?',
     categories: ['Datastructures', 'Algorithms'],
@@ -11,6 +12,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 2,
+    key: Math.random() * 100,
     title: 'Array vs LL',
     question: 'How is an Array different from Linked List?',
     categories: ['Datastructures', 'Algorithms'],
@@ -19,6 +21,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 3,
+    key: Math.random() * 100,
     title: 'Stack',
     question: 'What is Stack and where it can be used?',
     categories: ['Datastructures', 'Algorithms'],
@@ -27,6 +30,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 4,
+    key: Math.random() * 100,
     title: 'Queue and Queue vs Stack',
     question:
       'What is a Queue, how it is different from stack and how is it implemented? Can we do the Queue implementation with Java?',
@@ -36,6 +40,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 5,
+    key: Math.random() * 100,
     title: 'BFS and DFS graph',
     question: 'Which data structures are used for BFS and DFS of a graph?',
     categories: ['Datastructures', 'Algorithms'],
@@ -44,6 +49,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 6,
+    key: Math.random() * 100,
     title: 'Real vs Virtual DOM',
     question: 'Difference between Real DOM and Virtual DOM?',
     categories: ['React', 'Javascript'],
@@ -52,6 +58,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 7,
+    key: Math.random() * 100,
     title: 'React features',
     question: 'What are latest feature of React?',
     categories: ['React', 'Javascript'],
@@ -60,6 +67,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 8,
+    key: Math.random() * 100,
     title: 'React vs Angular',
     question: 'How is React different from Angular?',
     categories: ['Angular', 'Javascript', 'Frontend'],
@@ -68,6 +76,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 9,
+    key: Math.random() * 100,
     title: 'Everything is component',
     question: 'What do you understand from “In React, everything is a component"?',
     categories: ['React', 'Javascript'],
@@ -76,6 +85,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 10,
+    key: Math.random() * 100,
     title: 'Stateful vs stateless',
     question: 'Differentiate between stateful and stateless components?',
     categories: ['Javascript'],
@@ -84,6 +94,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 11,
+    key: Math.random() * 100,
     title: '== vs equals(..)',
     question:
       'What is the difference between “==” and “equals(…)” in comparing Java String objects?',
@@ -93,6 +104,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 12,
+    key: Math.random() * 100,
     title: 'Strings java',
     question: 'Can you explain how Strings are interned in Java?',
     categories: ['Java'],
@@ -101,6 +113,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 13,
+    key: Math.random() * 100,
     title: 'Explain Java code',
     question:
       'Can you describe what the following code does and what parts of memory the local variables, objects, and references to the objects occupy in Java?',
@@ -110,6 +123,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 14,
+    key: Math.random() * 100,
     title: 'Overriding and Polymorphism',
     question: 'Are overriding & polymorphism applicable to static methods as well?',
     categories: ['Java'],
@@ -118,6 +132,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 15,
+    key: Math.random() * 100,
     title: 'Static vs Dynamic class',
     question: 'Explain static vs. dynamic class loading?',
     categories: ['Java'],
@@ -126,6 +141,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 16,
+    key: Math.random() * 100,
     title: '== vs equals(..)',
     question:
       'What is the difference between “==” and “equals(…)” in comparing Java String objects?',
@@ -135,6 +151,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 17,
+    key: Math.random() * 100,
     title: 'Strings java',
     question: 'Can you explain how Strings are interned in Java?',
     categories: ['Java'],
@@ -143,6 +160,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 18,
+    key: Math.random() * 100,
     title: 'Explain Java code',
     question:
       'Can you describe what the following code does and what parts of memory the local variables, objects, and references to the objects occupy in Java?',
@@ -152,6 +170,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 19,
+    key: Math.random() * 100,
     title: 'Overriding and Polymorphism',
     question: 'Are overriding & polymorphism applicable to static methods as well?',
     categories: ['Java'],
@@ -160,6 +179,7 @@ export const dummyQuestions: IQuestionModel[] = [
   },
   {
     id: 20,
+    key: Math.random() * 100,
     title: 'Static vs Dynamic class',
     question: 'Explain static vs. dynamic class loading?',
     categories: ['Java'],

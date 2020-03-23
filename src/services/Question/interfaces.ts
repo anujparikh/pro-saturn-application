@@ -7,6 +7,7 @@ export enum DifficultyLevels {
 }
 export interface IQuestionModel {
   id: number;
+  key: number;
   title: string;
   question?: string;
   solution?: string;

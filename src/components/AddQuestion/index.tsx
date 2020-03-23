@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Tabs, Card, Form, Input, Row, Col, Select, Radio } from 'antd';
+import { PlusCircleOutlined } from '@ant-design/icons';
 import './index.less';
 import { categories } from './dummy';
 import { DifficultyLevels } from '../../services/Question/interfaces';
@@ -17,7 +18,7 @@ const AddQuestion: FC<AddQuestionProps> = (props) => {
 
   return (
     <Card className="add-question-card" bodyStyle={{ paddingBottom: 0, paddingTop: '0.4rem' }}>
-      <Tabs>
+      <Tabs tabBarExtraContent={<PlusCircleOutlined style={{ fontSize: '20px' }} />}>
         <TabPane className="add-question-content" tab="Question" key="1">
           <Row>
             <Col span={8}>
