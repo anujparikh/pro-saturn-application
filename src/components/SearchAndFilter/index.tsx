@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
-import { Row, Col, Input, Select, Icon } from 'antd';
+import { Row, Col, Input, Select } from 'antd';
+import { DeleteOutlined } from '@ant-design/icons';
 import './index.less';
 
 export type SearchSortAndFilterPropTypes = {
@@ -28,7 +29,7 @@ const SearchSortAndFilter: FC<SearchSortAndFilterPropTypes> = (props) => {
           className="filter-select"
           mode="tags"
           placeholder={filterPlaceholder}
-          suffixIcon={<Icon type="delete" />}
+          suffixIcon={<DeleteOutlined />}
         >
           <OptGroup label="Roles">
             {roleTypes.map((role) => (
@@ -47,7 +48,7 @@ const SearchSortAndFilter: FC<SearchSortAndFilterPropTypes> = (props) => {
         </Select>
       </Col>
       <Col span={1}>
-        <Icon className="clear-filters-icon" type="delete" />
+        <DeleteOutlined className="clear-filters-icon" />
       </Col>
     </Row>
   );

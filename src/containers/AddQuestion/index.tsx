@@ -4,10 +4,9 @@ import './index.less';
 import { connect } from 'react-redux';
 import { IQuestionModel, DifficultyLevels } from '../../services/Question/interfaces';
 import { addUnsavedQuestion } from '../../services/Question/actions';
-import { FormComponentProps } from 'antd/es/form';
 import AddQuestionComponent from '../../components/AddQuestion';
 
-export interface AddQuestionProps extends FormComponentProps {
+export interface AddQuestionProps {
   showSubmitButtons?: boolean;
 }
 
@@ -36,7 +35,7 @@ const AddQuestion: FC<AddQuestionProps> = (props: any) => {
   };
 
   return (
-    <Form onSubmit={addQuestion}>
+    <Form>
       <AddQuestionComponent getFieldDecorator={getFieldDecorator}></AddQuestionComponent>
     </Form>
   );
@@ -51,4 +50,4 @@ const mapDispatchToProps = (dispatch: any) => ({
 });
 const connectedAddQuestion = connect(null, mapDispatchToProps)(AddQuestion);
 
-export default Form.create<AddQuestionProps>({ name: 'addQuesiton' })(connectedAddQuestion);
+export default connectedAddQuestion;

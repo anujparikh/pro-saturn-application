@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
-import { Row, Typography, Icon, Table } from 'antd';
+import { Row, Typography, Table } from 'antd';
+import { LoginOutlined } from '@ant-design/icons';
 import './index.less';
 
 type columnsType = {
@@ -19,9 +20,9 @@ const ActionCard: FC<ActionCardPropTypes> = ({ title, columns, data }) => {
   const { Text } = Typography;
   return (
     <div className="action-card">
-      <Row className="feedback-header" type="flex" justify="space-between">
+      <Row className="feedback-header" justify="space-between">
         <Text strong>{title}</Text>
-        <Icon type="login" />
+        <LoginOutlined />
       </Row>
       <div className="feedback-table">
         <Table

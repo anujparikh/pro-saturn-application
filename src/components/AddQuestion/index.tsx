@@ -45,14 +45,14 @@ const AddQuestion: FC<AddQuestionProps> = (props) => {
                 })(
                   <Select placeholder="Categories" mode="tags" tokenSeparators={[',']}>
                     {categories.map((c) => (
-                      <Option key={c.name}>{c.name}</Option>
+                      <Option value={c.name}>{c.name}</Option>
                     ))}
                   </Select>,
                 )}
               </Item>
             </Col>
           </Row>
-          <Row type="flex" align="top">
+          <Row align="top">
             <Col span={15}>
               <Item>
                 {getFieldDecorator('question', {

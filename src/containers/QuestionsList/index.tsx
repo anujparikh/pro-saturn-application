@@ -23,7 +23,7 @@ const QuestionsList: FC = (props: any) => {
         <Row className="questions-search-filter">
           <SearchSortAndFilter {...searchSortAndFilterProps}></SearchSortAndFilter>
         </Row>
-        <Row type="flex" justify="center" align="middle">
+        <Row justify="center" align="middle">
           <Col span={2}>
             <Typography.Text strong>Categories</Typography.Text>
           </Col>

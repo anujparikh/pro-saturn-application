@@ -20,7 +20,7 @@ const ProfileMenu: FC<ProfileMenuPropTypes> = ({ showUserName, userName }) => {
       </Col>
     </Row>
   ) : (
-    <Row type="flex" justify="center">
+    <Row justify="center">
       <Col>{avatar}</Col>
     </Row>
   );

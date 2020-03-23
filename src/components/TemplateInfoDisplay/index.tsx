@@ -14,14 +14,14 @@ const TemplateInfoDisplay: FC<TemplateInfoDisplayProps> = ({
   const { Title, Text } = Typography;
   return (
     <>
-      <Row type="flex" justify="center">
+      <Row justify="center">
         <Col>
           <Title className="template-info-display-count" level={1}>
             {count}
           </Title>
         </Col>
       </Row>
-      <Row type="flex" justify="center">
+      <Row justify="center">
         <Col>
           <Text className="template-info-display-text" type="secondary">
             {text}

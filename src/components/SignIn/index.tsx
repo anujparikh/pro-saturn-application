@@ -1,38 +1,47 @@
 import React, { FC } from 'react';
-import { Card, Form, Input, Icon, Checkbox, Button, Row, Col } from 'antd';
+import { Card, Form, Input, Checkbox, Button, Row, Col } from 'antd';
+import {
+  UserOutlined,
+  LockOutlined,
+  GithubFilled,
+  GoogleCircleFilled,
+  LinkedinFilled,
+} from '@ant-design/icons';
 import './index.less';
-import { FormComponentProps } from 'antd/lib/form';
 import Logo from '../Logo';
 
-const SignIn: FC<FormComponentProps> = (props) => {
-  const { getFieldDecorator } = props.form;
+const SignIn: FC = () => {
   return (
     <>
-      <Row className="logo-row" type="flex" justify="center">
+      <Row className="logo-row" justify="center">
         <Logo></Logo>
       </Row>
       <Row>
         <Col xl={{ span: 8, offset: 8 }}>
           <Card title="SIGN IN" className="sign-in-card-content">
             <Form>
-              <Form.Item>
-                {getFieldDecorator('user', {
-                  rules: [{ required: true, message: 'Please enter your email or username' }],
-                })(<Input prefix={<Icon type="user" />} placeholder="Username" />)}
+              <Form.Item
+                label="Username"
+                name="username"
+                rules={[{ required: true, message: 'Please enter your username!' }]}
+              >
+                <Input prefix={<UserOutlined />} placeholder="Username" />
               </Form.Item>
-              <Form.Item>
-                {getFieldDecorator('password', {
-                  rules: [{ required: true, message: 'Please enter your password' }],
-                })(<Input prefix={<Icon type="lock" />} type="password" placeholder="Password" />)}
+              <Form.Item
+                label="Password"
+                name="password"
+                rules={[{ required: true, message: 'Please enter your password!' }]}
+              >
+                <Input prefix={<LockOutlined />} type="password" placeholder="Password" />
               </Form.Item>
               <Row>
                 <Col span={12}>
-                  <Row type="flex" justify="start">
+                  <Row justify="start">
                     <Checkbox>Remember me</Checkbox>
                   </Row>
                 </Col>
                 <Col span={12}>
-                  <Row type="flex" justify="end">
+                  <Row justify="end">
                     <a className="login-form-forgot" href="#/">
                       Forgot username or password?
                     </a>
@@ -46,10 +55,10 @@ const SignIn: FC<FormComponentProps> = (props) => {
                   </Button>
                 </Col>
                 <Col span={12}>
-                  <Row type="flex" justify="end">
-                    <Icon type="github" theme="filled" className="login-form-icon" />
-                    <Icon type="google-circle" theme="filled" className="login-form-icon" />
-                    <Icon type="linkedin" theme="filled" className="login-form-icon" />
+                  <Row justify="end">
+                    <GithubFilled className="login-form-icon" />
+                    <GoogleCircleFilled className="login-form-icon" />
+                    <LinkedinFilled className="login-form-icon" />
                   </Row>
                 </Col>
               </Row>
@@ -62,14 +71,14 @@ const SignIn: FC<FormComponentProps> = (props) => {
         <Col xl={{ span: 8, offset: 8 }}>
           <Card className="privacy-card-content">
             <Col span={9}>
-              <Row type="flex" justify="space-around">
+              <Row justify="space-around">
                 <a href="#/">Terms</a>
                 <a href="#/">Privacy</a>
                 <a href="#/">Security</a>
               </Row>
             </Col>
             <Col span={6} offset={9}>
-              <Row type="flex" justify="end">
+              <Row justify="end">
                 <a href="/join">Create Account</a>
               </Row>
             </Col>
@@ -80,4 +89,4 @@ const SignIn: FC<FormComponentProps> = (props) => {
   );
 };
 
-export default Form.create()(SignIn);
+export default SignIn;

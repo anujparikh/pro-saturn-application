@@ -1,7 +1,14 @@
 import React, { FC } from 'react';
-import SideBar from '../../components/SideBar';
+import SideBar, { SideBarPropTypes } from '../../components/SideBar';
 import Header from '../../containers/Header';
 import { Row, Col } from 'antd';
+import {
+  DashboardOutlined,
+  SnippetsOutlined,
+  QuestionCircleOutlined,
+  ReconciliationOutlined,
+  UsergroupAddOutlined,
+} from '@ant-design/icons';
 
 export type PagePRPropTypes = {
   headerTitle: string;
@@ -12,30 +19,30 @@ export type PagePRPropTypes = {
 const Page: FC<PagePRPropTypes> = (props) => {
   const { headerTitle, headerExtra, displayComponent } = props;
 
-  const sideBarProps = {
+  const sideBarProps: SideBarPropTypes = {
     menuItems: [
       {
-        iconName: 'dashboard',
+        iconComponent: <DashboardOutlined />,
         title: 'Dashboard',
         route: '/dashboard',
       },
       {
-        iconName: 'snippets',
+        iconComponent: <SnippetsOutlined />,
         title: 'Templates',
         route: '/templates',
       },
       {
-        iconName: 'question-circle',
+        iconComponent: <QuestionCircleOutlined />,
         title: 'Questions',
         route: '/questions',
       },
       {
-        iconName: 'reconciliation',
+        iconComponent: <ReconciliationOutlined />,
         title: 'Interviews',
         route: '/dashboard',
       },
       {
-        iconName: 'usergroup-add',
+        iconComponent: <UsergroupAddOutlined />,
         title: 'Feedbacks',
         route: '/dashboard',
       },
