@@ -21,14 +21,12 @@ const SignIn: FC = () => {
           <Card title="SIGN IN" className="sign-in-card-content">
             <Form>
               <Form.Item
-                label="Username"
                 name="username"
                 rules={[{ required: true, message: 'Please enter your username!' }]}
               >
                 <Input prefix={<UserOutlined />} placeholder="Username" />
               </Form.Item>
               <Form.Item
-                label="Password"
                 name="password"
                 rules={[{ required: true, message: 'Please enter your password!' }]}
               >
@@ -70,18 +68,20 @@ const SignIn: FC = () => {
       <Row>
         <Col xl={{ span: 8, offset: 8 }}>
           <Card className="privacy-card-content">
-            <Col span={9}>
-              <Row justify="space-around">
-                <a href="#/">Terms</a>
-                <a href="#/">Privacy</a>
-                <a href="#/">Security</a>
-              </Row>
-            </Col>
-            <Col span={6} offset={9}>
-              <Row justify="end">
-                <a href="/join">Create Account</a>
-              </Row>
-            </Col>
+            <Row>
+              <Col span={12}>
+                <Row justify="space-between">
+                  <a href="#/">Terms</a>
+                  <a href="#/">Privacy</a>
+                  <a href="#/">Security</a>
+                </Row>
+              </Col>
+              <Col span={6} offset={6}>
+                <Row justify="end">
+                  <a href="/join">Create Account</a>
+                </Row>
+              </Col>
+            </Row>
           </Card>
         </Col>
       </Row>

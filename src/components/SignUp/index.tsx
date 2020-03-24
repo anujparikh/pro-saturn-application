@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { Card, Form, Input, Button, Row, Col, Typography } from 'antd';
-import { CheckCircleOutlined } from '@ant-design/icons';
 import './index.less';
 import Logo from '../Logo';
 
@@ -16,19 +15,17 @@ const SignUp: FC = () => {
           <Card title="CREATE ACCOUNT" className="sign-up-card-content">
             <Form>
               <Row>
-                <Col span={10}>
+                <Col span={11}>
                   <Form.Item
                     name="firstName"
-                    label="First Name"
                     rules={[{ required: true, message: 'Please enter your first name' }]}
                   >
                     <Input placeholder="First name" />
                   </Form.Item>
                 </Col>
-                <Col span={10} offset={2}>
+                <Col span={11} offset={2}>
                   <Form.Item
                     name="lastName"
-                    label="Last Name"
                     rules={[{ required: true, message: 'Please enter your last name' }]}
                   >
                     <Input placeholder="Last name" />
@@ -36,24 +33,19 @@ const SignUp: FC = () => {
                 </Col>
               </Row>
               <Row>
-                <Col span={22}>
+                <Col span={24}>
                   <Form.Item
                     name="user"
-                    label="Username"
                     rules={[{ required: true, message: 'Please enter desired username' }]}
                   >
                     <Input placeholder="Username" />
                   </Form.Item>
                 </Col>
-                <Col span={1} offset={1}>
-                  <CheckCircleOutlined className="sign-up-check-icon" />
-                </Col>
               </Row>
               <Row>
-                <Col span={10}>
+                <Col span={11}>
                   <Form.Item
                     name="password"
-                    label="Password"
                     rules={[
                       {
                         required: true,
@@ -62,13 +54,12 @@ const SignUp: FC = () => {
                     ]}
                     hasFeedback
                   >
-                    <Input.Password />
+                    <Input type="password" placeholder="Password" />
                   </Form.Item>
                 </Col>
-                <Col span={10} offset={2}>
+                <Col span={11} offset={2}>
                   <Form.Item
                     name="confirm"
-                    label="Confirm Password"
                     dependencies={['password']}
                     hasFeedback
                     rules={[
@@ -86,18 +77,14 @@ const SignUp: FC = () => {
                       }),
                     ]}
                   >
-                    <Input.Password />
+                    <Input type="password" placeholder="Confirm password" />
                   </Form.Item>
-                </Col>
-                <Col span={1} offset={1}>
-                  <CheckCircleOutlined className="sign-up-check-icon" />
                 </Col>
               </Row>
               <Row>
-                <Col span={22}>
+                <Col span={24}>
                   <Form.Item
                     name="email"
-                    label="E-mail"
                     rules={[
                       {
                         type: 'email',
@@ -109,11 +96,8 @@ const SignUp: FC = () => {
                       },
                     ]}
                   >
-                    <Input />
+                    <Input type="email" placeholder="Email" />
                   </Form.Item>
-                </Col>
-                <Col span={1} offset={1}>
-                  <CheckCircleOutlined className="sign-up-check-icon" />
                 </Col>
               </Row>
               <Row className="sign-up-form-button">
