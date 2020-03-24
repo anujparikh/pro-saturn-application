@@ -21,13 +21,7 @@ const SideBar: FC<SideBarPropTypes> = ({ menuItems }) => {
         <Logo></Logo>
       </Row>
       {menuItems && (
-        <Menu
-          className="side-bar-sider-open"
-          inlineCollapsed={false}
-          theme="light"
-          mode="inline"
-          defaultSelectedKeys={['1']}
-        >
+        <Menu className="side-bar-sider-open" inlineCollapsed={false} theme="light" mode="inline">
           {menuItems.map((item) => (
             <Menu.Item key={item.title}>
               <a href={item.route}>

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Card, List, Row, Typography } from 'antd';
+import { Card, Row, Typography } from 'antd';
 import { LoginOutlined } from '@ant-design/icons';
 import './index.less';
 
@@ -19,16 +19,11 @@ const QuestionCard: FC<QuestionCardPropTypes> = (props) => {
         <LoginOutlined />
       </Row>
       <Row>
-        <List
-          size="small"
-          split={false}
-          dataSource={questions}
-          renderItem={(item) => (
-            <List.Item className="no-padding">
-              <Text ellipsis>{item}</Text>
-            </List.Item>
-          )}
-        />
+        {questions.map((q) => (
+          <Text key={q} className="question-text" ellipsis>
+            {q}
+          </Text>
+        ))}
       </Row>
     </Card>
   );
