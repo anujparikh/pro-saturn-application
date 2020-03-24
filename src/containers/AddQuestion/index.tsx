@@ -12,7 +12,6 @@ export interface AddQuestionProps {
 
 const AddQuestion: FC<AddQuestionProps> = (props: any) => {
   const { addUnsavedQuestion } = props;
-  const { getFieldDecorator } = props.form;
 
   const unsavedQuestion: IQuestionModel = {
     id: 234,
@@ -36,7 +35,7 @@ const AddQuestion: FC<AddQuestionProps> = (props: any) => {
 
   return (
     <Form>
-      <AddQuestionComponent getFieldDecorator={getFieldDecorator}></AddQuestionComponent>
+      <AddQuestionComponent></AddQuestionComponent>
     </Form>
   );
 };
