@@ -21,7 +21,7 @@ const QuestionCategory: FC<QuestionCategoryPropTypes> = (props) => {
 
   return (
     <Card className="question-category" size="small">
-      <Row type="flex" justify="space-between">
+      <Row justify="space-between">
         <Col>
           <Text strong>{title}</Text>
         </Col>

@@ -2,7 +2,7 @@ import React, { FC, useEffect } from 'react';
 import SearchSortAndFilter from '../../components/SearchAndFilter';
 import { SearchSortAndFilterPropTypes } from '../../components/SearchAndFilter';
 import './index.less';
-import { Table, Tag, Card, Row, Col, Typography } from 'antd';
+import { Table, Tag, Card, Row, Col, Typography, Empty } from 'antd';
 import { categories } from './dummy';
 import columns from './table-columns';
 import { connect } from 'react-redux';
@@ -23,7 +23,7 @@ const QuestionsList: FC = (props: any) => {
         <Row className="questions-search-filter">
           <SearchSortAndFilter {...searchSortAndFilterProps}></SearchSortAndFilter>
         </Row>
-        <Row type="flex" justify="center" align="middle">
+        <Row justify="center" align="middle">
           <Col span={2}>
             <Typography.Text strong>Categories</Typography.Text>
           </Col>
@@ -45,7 +45,8 @@ const QuestionsList: FC = (props: any) => {
             ...c,
             ellipsis: true,
           }))}
-          dataSource={questionsData}
+          locale={{ emptyText: <Empty></Empty> }}
+          dataSource={questionsData.length !== 0 ? questionsData : false}
         ></Table>
       </Card>
     </div>
@@ -54,7 +55,7 @@ const QuestionsList: FC = (props: any) => {
 
 const mapStateToProps = (state: any) => {
   const {
-    question: { questions: questionsData, isLoading },
+    questions: { questions: questionsData, isLoading },
   } = state;
   return { questionsData, isLoading };
 };

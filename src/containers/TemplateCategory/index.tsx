@@ -21,7 +21,7 @@ const TemplateCategory: FC<TemplateCategoryPropTypes> = (props) => {
 
   return (
     <Card className="template-category" size="small">
-      <Row type="flex" justify="space-between">
+      <Row justify="space-between">
         <Col>
           <Text strong>{title}</Text>
         </Col>

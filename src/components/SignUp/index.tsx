@@ -1,15 +1,13 @@
 import React, { FC } from 'react';
-import { Card, Form, Input, Icon, Button, Row, Col, Typography } from 'antd';
+import { Card, Form, Input, Button, Row, Col, Typography } from 'antd';
 import './index.less';
-import { FormComponentProps } from 'antd/lib/form';
 import Logo from '../Logo';
 
-const SignIn: FC<FormComponentProps> = (props) => {
-  const { getFieldDecorator } = props.form;
+const SignUp: FC = () => {
   const { Text } = Typography;
   return (
     <>
-      <Row className="logo-row" type="flex" justify="center">
+      <Row className="logo-row" justify="center">
         <Logo></Logo>
       </Row>
       <Row>
@@ -17,62 +15,89 @@ const SignIn: FC<FormComponentProps> = (props) => {
           <Card title="CREATE ACCOUNT" className="sign-up-card-content">
             <Form>
               <Row>
-                <Col span={10}>
-                  <Form.Item>
-                    {getFieldDecorator('firstName', {
-                      rules: [{ required: true, message: 'Please enter your first name' }],
-                    })(<Input placeholder="First name" />)}
+                <Col span={11}>
+                  <Form.Item
+                    name="firstName"
+                    rules={[{ required: true, message: 'Please enter your first name' }]}
+                  >
+                    <Input placeholder="First name" />
                   </Form.Item>
                 </Col>
-                <Col span={10} offset={2}>
-                  <Form.Item>
-                    {getFieldDecorator('lastName', {
-                      rules: [{ required: true, message: 'Please enter your last name' }],
-                    })(<Input placeholder="Last name" />)}
+                <Col span={11} offset={2}>
+                  <Form.Item
+                    name="lastName"
+                    rules={[{ required: true, message: 'Please enter your last name' }]}
+                  >
+                    <Input placeholder="Last name" />
                   </Form.Item>
                 </Col>
               </Row>
               <Row>
-                <Col span={22}>
-                  <Form.Item>
-                    {getFieldDecorator('user', {
-                      rules: [{ required: true, message: 'Please enter desired username' }],
-                    })(<Input placeholder="Username" />)}
+                <Col span={24}>
+                  <Form.Item
+                    name="user"
+                    rules={[{ required: true, message: 'Please enter desired username' }]}
+                  >
+                    <Input placeholder="Username" />
                   </Form.Item>
-                </Col>
-                <Col span={1} offset={1}>
-                  <Icon className="sign-up-check-icon" type="check-circle" />
                 </Col>
               </Row>
               <Row>
-                <Col span={10}>
-                  <Form.Item>
-                    {getFieldDecorator('password', {
-                      rules: [{ required: true, message: 'Please enter your password' }],
-                    })(<Input type="password" placeholder="Password" />)}
+                <Col span={11}>
+                  <Form.Item
+                    name="password"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Please input your password!',
+                      },
+                    ]}
+                    hasFeedback
+                  >
+                    <Input type="password" placeholder="Password" />
                   </Form.Item>
                 </Col>
-                <Col span={10} offset={2}>
-                  <Form.Item>
-                    {getFieldDecorator('confirmPassword', {
-                      rules: [{ required: true, message: 'Please re-enter your password' }],
-                    })(<Input type="password" placeholder="Confirm Password" />)}
+                <Col span={11} offset={2}>
+                  <Form.Item
+                    name="confirm"
+                    dependencies={['password']}
+                    hasFeedback
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Please confirm your password!',
+                      },
+                      ({ getFieldValue }) => ({
+                        validator(rule, value) {
+                          if (!value || getFieldValue('password') === value) {
+                            return Promise.resolve();
+                          }
+                          return Promise.reject('The two passwords that you entered do not match!');
+                        },
+                      }),
+                    ]}
+                  >
+                    <Input type="password" placeholder="Confirm password" />
                   </Form.Item>
-                </Col>
-                <Col span={1} offset={1}>
-                  <Icon className="sign-up-check-icon" type="check-circle" />
                 </Col>
               </Row>
               <Row>
-                <Col span={22}>
-                  <Form.Item>
-                    {getFieldDecorator('email', {
-                      rules: [{ required: true, message: 'Please enter your Email' }],
-                    })(<Input placeholder="Email" />)}
+                <Col span={24}>
+                  <Form.Item
+                    name="email"
+                    rules={[
+                      {
+                        type: 'email',
+                        message: 'The input is not valid E-mail!',
+                      },
+                      {
+                        required: true,
+                        message: 'Please input your E-mail!',
+                      },
+                    ]}
+                  >
+                    <Input type="email" placeholder="Email" />
                   </Form.Item>
-                </Col>
-                <Col span={1} offset={1}>
-                  <Icon className="sign-up-check-icon" type="check-circle" />
                 </Col>
               </Row>
               <Row className="sign-up-form-button">
@@ -95,4 +120,4 @@ const SignIn: FC<FormComponentProps> = (props) => {
   );
 };
 
-export default Form.create()(SignIn);
+export default SignUp;

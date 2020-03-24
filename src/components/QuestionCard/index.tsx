@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
-import { Card, List, Row, Typography, Icon } from 'antd';
+import { Card, Row, Typography } from 'antd';
+import { LoginOutlined } from '@ant-design/icons';
 import './index.less';
 
 export type QuestionCardPropTypes = {
@@ -13,21 +14,16 @@ const QuestionCard: FC<QuestionCardPropTypes> = (props) => {
   const { Text } = Typography;
   return (
     <Card size="small" className="question-card">
-      <Row type="flex" justify="space-between">
+      <Row justify="space-between">
         <Text strong>{title}</Text>
-        <Icon type="login" />
+        <LoginOutlined />
       </Row>
       <Row>
-        <List
-          size="small"
-          split={false}
-          dataSource={questions}
-          renderItem={(item) => (
-            <List.Item className="no-padding">
-              <Text ellipsis>{item}</Text>
-            </List.Item>
-          )}
-        />
+        {questions.map((q) => (
+          <Text key={q} className="question-text" ellipsis>
+            {q}
+          </Text>
+        ))}
       </Row>
     </Card>
   );

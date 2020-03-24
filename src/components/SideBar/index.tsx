@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
-import { Menu, Icon, Row } from 'antd';
+import { Menu, Row } from 'antd';
 import './index.less';
 import Logo from '../Logo';
 import ProfileMenu from '../ProfileMenu';
 
 type menuItem = {
-  iconName: string;
+  iconComponent: any;
   title: string;
   route: string;
 };
@@ -17,21 +17,15 @@ export type SideBarPropTypes = {
 const SideBar: FC<SideBarPropTypes> = ({ menuItems }) => {
   return (
     <div className="side-bar-container">
-      <Row type="flex" justify="center">
+      <Row justify="center">
         <Logo></Logo>
       </Row>
       {menuItems && (
-        <Menu
-          className="side-bar-sider-open"
-          inlineCollapsed={false}
-          theme="light"
-          mode="inline"
-          defaultSelectedKeys={['1']}
-        >
+        <Menu className="side-bar-sider-open" inlineCollapsed={false} theme="light" mode="inline">
           {menuItems.map((item) => (
             <Menu.Item key={item.title}>
               <a href={item.route}>
-                <Icon type={item.iconName} />
+                {item.iconComponent}
                 <span className="nav-text">{item.title}</span>
               </a>
             </Menu.Item>

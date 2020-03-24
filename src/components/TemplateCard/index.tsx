@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
-import { Card, Icon, Row, Col, Typography, Divider, Tag } from 'antd';
+import { Card, Row, Col, Typography, Divider, Tag } from 'antd';
+import { LoginOutlined } from '@ant-design/icons';
 import TemplateInfoDisplay from '../TemplateInfoDisplay';
 import './index.less';
 
@@ -27,7 +28,7 @@ const TemplateCard: FC<TemplateCardPropTypes> = (props) => {
   const { Text } = Typography;
   const { title, templateInfo, contentData } = props;
   return (
-    <Card size="small" className="template-card" title={title} extra={<Icon type="login" />}>
+    <Card size="small" className="template-card" title={title} extra={<LoginOutlined />}>
       <Row>
         {templateInfo.map((info) => {
           return (

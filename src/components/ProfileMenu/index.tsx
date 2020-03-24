@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import './index.less';
 import { Avatar, Row, Col, Typography } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 
 export type ProfileMenuPropTypes = {
   showUserName?: boolean;
@@ -9,7 +10,7 @@ export type ProfileMenuPropTypes = {
 
 const ProfileMenu: FC<ProfileMenuPropTypes> = ({ showUserName, userName }) => {
   const { Text } = Typography;
-  const avatar = <Avatar icon="user"></Avatar>;
+  const avatar = <Avatar icon={<UserOutlined />}></Avatar>;
   return showUserName ? (
     <Row>
       <Col span={5} offset={4}>
@@ -20,7 +21,7 @@ const ProfileMenu: FC<ProfileMenuPropTypes> = ({ showUserName, userName }) => {
       </Col>
     </Row>
   ) : (
-    <Row type="flex" justify="center">
+    <Row justify="center">
       <Col>{avatar}</Col>
     </Row>
   );

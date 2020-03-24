@@ -1,26 +1,24 @@
 import { Dispatch } from 'redux';
 import { getDummyPromise } from '../../global/utils/dummy-promise';
-import { dummyQuestions } from './dummy-data';
 import { questionsActionTypes } from './action-types';
 import { IQuestionModel } from './interfaces';
 
 export const getAllQuestions = () => {
-  return (dispatch: Dispatch) => {
+  return (dispatch: Dispatch, getState: any) => {
+    const {
+      questions: { questions },
+    } = getState();
     dispatch({ type: questionsActionTypes.LOADING });
-    return getDummyPromise(dummyQuestions).then((response) => {
+    return getDummyPromise(questions).then((response) => {
       dispatch({ type: questionsActionTypes.LOADED });
       dispatch({ type: questionsActionTypes.SET_LIST, payload: response });
     });
   };
 };
 
-export const addQuestion = (question: IQuestionModel) => {
+export const addUnsavedQuestion = (question: IQuestionModel) => {
   return (dispatch: Dispatch) => {
-    dispatch({ type: questionsActionTypes.LOADING });
-    return getDummyPromise(question).then((response) => {
-      dispatch({ type: questionsActionTypes.LOADED });
-      dispatch({ type: questionsActionTypes.ADD, payload: response });
-    });
+    dispatch({ type: questionsActionTypes.ADD_UNSAVED, payload: question });
   };
 };
 
