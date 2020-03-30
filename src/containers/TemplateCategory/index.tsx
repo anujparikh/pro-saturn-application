@@ -1,9 +1,12 @@
 import React, { FC } from 'react';
-import { Card, Row, Col, Button } from 'antd';
+import { Card, Row, Col, Avatar } from 'antd';
+import { PlusOutlined, MoreOutlined } from '@ant-design/icons';
+import { useSelector } from 'react-redux';
 import Text from 'antd/lib/typography/Text';
 import TemplateCard from '../../components/TemplateCard';
-import dummy from './dummy';
 import './index.less';
+import NoDataCard from '../../components/NoDataCard';
+import { ITemplateModel } from '../../services/Template/interfaces';
 
 interface CategoryNavigation {
   text: string;
@@ -16,8 +19,8 @@ export type TemplateCategoryPropTypes = {
 };
 
 const TemplateCategory: FC<TemplateCategoryPropTypes> = (props) => {
-  const templates = dummy;
   const { title, navigation } = props;
+  const templates = useSelector((state: any) => state.templates.templates);
 
   return (
     <Card className="template-category" size="small">
@@ -27,24 +30,33 @@ const TemplateCategory: FC<TemplateCategoryPropTypes> = (props) => {
         </Col>
         {navigation && (
           <Col>
-            <Button size="small" type="link" href={navigation.href}>
-              <Text type="secondary">{navigation.text}</Text>
-            </Button>
+            <Row gutter={4}>
+              <Col>
+                <Avatar style={{ backgroundColor: '#dce0e6' }} icon={<PlusOutlined />} />
+              </Col>
+              <Col>
+                <Avatar style={{ backgroundColor: '#dce0e6' }} icon={<MoreOutlined />} />
+              </Col>
+            </Row>
           </Col>
         )}
       </Row>
       <Row>
-        {templates.map((t) => {
-          return (
-            <Col key={t.id} xl={{ span: 6 }} lg={{ span: 8 }} md={{ span: 12 }} xs={{ span: 24 }}>
-              <TemplateCard
-                title={t.title}
-                templateInfo={t.templateInfo}
-                contentData={t.contentData}
-              ></TemplateCard>
-            </Col>
-          );
-        })}
+        {templates.length > 0 ? (
+          templates.map((t: ITemplateModel) => {
+            return (
+              <Col key={t.id} xl={{ span: 6 }} lg={{ span: 8 }} md={{ span: 12 }} xs={{ span: 24 }}>
+                <TemplateCard
+                  title={t.title}
+                  templateInfo={t.templateInfo}
+                  contentData={t.content}
+                ></TemplateCard>
+              </Col>
+            );
+          })
+        ) : (
+          <NoDataCard description="Templates not added"></NoDataCard>
+        )}
       </Row>
     </Card>
   );

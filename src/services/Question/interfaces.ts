@@ -1,5 +1,3 @@
-import { questionsActionTypes } from './action-types';
-
 export enum DifficultyLevels {
   Easy = 'Easy',
   Medium = 'Medium',
@@ -21,9 +19,4 @@ export interface IQuestionState {
   count: number;
   unsavedQuestions: IQuestionModel[];
   questions: IQuestionModel[];
-}
-
-interface GetAllQuestionsAction {
-  type: questionsActionTypes.SET_LIST;
-  payload: IQuestionModel[];
 }
