@@ -1,9 +1,12 @@
 import React, { FC } from 'react';
-import { Card, Row, Col, Button } from 'antd';
+import { Card, Row, Col, Avatar } from 'antd';
+import { PlusOutlined, MoreOutlined } from '@ant-design/icons';
 import Text from 'antd/lib/typography/Text';
 import QuestionCard from '../../components/QuestionCard';
-import dummy from './dummy';
 import './index.less';
+import { useSelector } from 'react-redux';
+import { IQuestionModel } from '../../services/Question/interfaces';
+import NoDataCard from '../../components/NoDataCard';
 
 interface CategoryNavigation {
   text: string;
@@ -16,8 +19,18 @@ export type QuestionCategoryPropTypes = {
 };
 
 const QuestionCategory: FC<QuestionCategoryPropTypes> = (props) => {
-  const catergories = dummy;
   const { title, navigation } = props;
+  const questions: IQuestionModel[] = useSelector((state: any) => state.questions.questions);
+  const categories: any = {};
+  questions.forEach((question) => {
+    question.categories.forEach((c) => {
+      if (Object.keys(categories).includes(c)) {
+        categories[c].push(question);
+      } else {
+        categories[c] = [question];
+      }
+    });
+  });
 
   return (
     <Card className="question-category" size="small">
@@ -27,20 +40,30 @@ const QuestionCategory: FC<QuestionCategoryPropTypes> = (props) => {
         </Col>
         {navigation && (
           <Col>
-            <Button size="small" type="link" href={navigation.href}>
-              <Text type="secondary">{navigation.text}</Text>
-            </Button>
+            <Row gutter={4}>
+              <Col>
+                <Avatar style={{ backgroundColor: '#dce0e6' }} icon={<PlusOutlined />} />
+              </Col>
+              <Col>
+                <Avatar style={{ backgroundColor: '#dce0e6' }} icon={<MoreOutlined />} />
+              </Col>
+            </Row>
           </Col>
         )}
       </Row>
       <Row>
-        {catergories.map((t) => {
-          return (
-            <Col key={t.id} xl={{ span: 8 }} md={{ span: 12 }} xs={{ span: 24 }}>
-              <QuestionCard title={t.title} questions={t.questions}></QuestionCard>
-            </Col>
-          );
-        })}
+        {categories.length > 0 ? (
+          categories.map((t: any) => {
+            return (
+              <Col key={t.id} xl={{ span: 8 }} md={{ span: 12 }} xs={{ span: 24 }}>
+                <QuestionCard title={t.title} questions={t.questions}></QuestionCard>
+              </Col>
+            );
+          })
+        ) : (
+          <NoDataCard description="Questions not added"></NoDataCard>
+        )}
+        {}
       </Row>
     </Card>
   );
