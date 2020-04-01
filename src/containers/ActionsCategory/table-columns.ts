@@ -3,8 +3,8 @@ export default [
     type: 'upcoming',
     columns: [
       {
-        title: 'Cadidate Name',
-        dataIndex: 'name',
+        title: 'Candidate Name',
+        dataIndex: 'candidateName',
         width: '25%',
       },
       {
@@ -31,7 +31,7 @@ export default [
     type: 'pending',
     columns: [
       {
-        title: 'Cadidate Name',
+        title: 'Candidate Name',
         dataIndex: 'name',
         width: '25%',
       },

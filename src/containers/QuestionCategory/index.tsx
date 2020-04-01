@@ -42,10 +42,16 @@ const QuestionCategory: FC<QuestionCategoryPropTypes> = (props) => {
           <Col>
             <Row gutter={4}>
               <Col>
-                <Avatar style={{ backgroundColor: '#dce0e6' }} icon={<PlusOutlined />} />
+                <Avatar
+                  style={{ width: 25, height: 25, lineHeight: '25px', backgroundColor: '#dce0e6' }}
+                  icon={<PlusOutlined />}
+                />
               </Col>
               <Col>
-                <Avatar style={{ backgroundColor: '#dce0e6' }} icon={<MoreOutlined />} />
+                <Avatar
+                  style={{ width: 25, height: 25, lineHeight: '25px', backgroundColor: '#dce0e6' }}
+                  icon={<MoreOutlined />}
+                />
               </Col>
             </Row>
           </Col>
