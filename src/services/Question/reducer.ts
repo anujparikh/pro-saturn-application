@@ -45,7 +45,7 @@ export const questionsReducer = (state: IQuestionState = initialState, action: a
       };
     }
     case questionsActionTypes.DELETE_MULTIPLE: {
-      const questions = [...state.questions].filter((q) => action.payload.find(q.id) === -1);
+      const questions = state.questions.filter((q) => action.payload.find(q.id) === -1);
       return {
         ...state,
         count: state.count - action.payload.length,

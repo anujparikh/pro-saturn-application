@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
-import { Row, Typography, Table } from 'antd';
-import { LoginOutlined } from '@ant-design/icons';
+import { Row, Typography, Table, Avatar, Card } from 'antd';
+import { MoreOutlined } from '@ant-design/icons';
+import { grey } from '@ant-design/colors';
 import './index.less';
 
 type columnsType = {
@@ -19,10 +20,13 @@ export type ActionCardPropTypes = {
 const ActionCard: FC<ActionCardPropTypes> = ({ title, columns, data }) => {
   const { Text } = Typography;
   return (
-    <div className="action-card">
+    <Card className="action-card" size="small">
       <Row className="feedback-header" justify="space-between">
         <Text strong>{title}</Text>
-        <LoginOutlined />
+        <Avatar
+          style={{ width: 25, height: 25, lineHeight: '25px', backgroundColor: grey[0] }}
+          icon={<MoreOutlined />}
+        />
       </Row>
       <div className="feedback-table">
         <Table
@@ -39,7 +43,7 @@ const ActionCard: FC<ActionCardPropTypes> = ({ title, columns, data }) => {
           bordered={false}
         ></Table>
       </div>
-    </div>
+    </Card>
   );
 };
 
