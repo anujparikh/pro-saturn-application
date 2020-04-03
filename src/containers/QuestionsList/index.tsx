@@ -2,14 +2,16 @@ import React, { FC, useEffect } from 'react';
 import SearchSortAndFilter from '../../components/SearchAndFilter';
 import { SearchSortAndFilterPropTypes } from '../../components/SearchAndFilter';
 import './index.less';
-import { Table, Tag, Card, Row, Col, Typography, Empty } from 'antd';
+import { Table, Tag, Card, Row, Col, Typography, Empty, Modal } from 'antd';
 import { categories } from './dummy';
 import columns from './table-columns';
 import { connect } from 'react-redux';
 import { getAllQuestions } from '../../services/Question/actions';
+import AddQuestion from '../../components/AddQuestion';
 
+// TODO: set proper prop types for the component
 const QuestionsList: FC = (props: any) => {
-  const { questionsData, isLoading, getAllQuestions } = props;
+  const { questionsData, isLoading, getAllQuestions, showModalFlag, setShowModalFlag } = props;
   useEffect(() => {
     getAllQuestions();
   }, [getAllQuestions]);
@@ -17,11 +19,26 @@ const QuestionsList: FC = (props: any) => {
     searchPlaceholder: 'search questions',
     filterPlaceholder: 'filter questions by categories',
   };
+  const handleCancel = () => {
+    setShowModalFlag(false);
+  };
   return (
     <div className="questions-list-container">
+      <Modal
+        title="Add Question"
+        visible={showModalFlag}
+        onCancel={handleCancel}
+        width={'80%'}
+        centered
+        closable={false}
+      >
+        <AddQuestion></AddQuestion>
+      </Modal>
       <Card>
         <Row className="questions-search-filter">
-          <SearchSortAndFilter {...searchSortAndFilterProps}></SearchSortAndFilter>
+          <Col span={24}>
+            <SearchSortAndFilter {...searchSortAndFilterProps}></SearchSortAndFilter>
+          </Col>
         </Row>
         <Row justify="center" align="middle">
           <Col span={2}>
