@@ -14,6 +14,13 @@
   dependencies:
     tinycolor2 "^1.4.1"
 
+"@ant-design/colors@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@ant-design/colors/-/colors-4.0.0.tgz#bcc1183b1fdfd1587d4e655035b3fc47bf3a4ab6"
+  integrity sha512-XDb3Yc70UylZiSIGhQ+y05BJk2XXCCtxLY1UHESZ/5tGT5hlYfJBJik7CSZOyg+sbs5UHdVZpywk+LJDEXyqew==
+  dependencies:
+    tinycolor2 "^1.4.1"
+
 "@ant-design/icons-svg@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@ant-design/icons-svg/-/icons-svg-4.0.0.tgz#6683db0df97c0c6900bb28a280faf391522ec734"

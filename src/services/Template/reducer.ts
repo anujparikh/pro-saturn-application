@@ -37,7 +37,7 @@ export const templatesReducer = (state: ITemplateState = initialState, action: a
       };
     }
     case templatesActionTypes.DELETE_MULTIPLE: {
-      const templates = [...state.templates].filter((q) => action.payload.find(q.id) === -1);
+      const templates = state.templates.filter((q) => action.payload.find(q.id) === -1);
       return {
         ...state,
         count: state.count - action.payload.length,

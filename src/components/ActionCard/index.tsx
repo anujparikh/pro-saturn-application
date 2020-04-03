@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Row, Typography, Table, Avatar, Card } from 'antd';
 import { MoreOutlined } from '@ant-design/icons';
+import { grey } from '@ant-design/colors';
 import './index.less';
 
 type columnsType = {
@@ -23,7 +24,7 @@ const ActionCard: FC<ActionCardPropTypes> = ({ title, columns, data }) => {
       <Row className="feedback-header" justify="space-between">
         <Text strong>{title}</Text>
         <Avatar
-          style={{ width: 25, height: 25, lineHeight: '25px', backgroundColor: '#dce0e6' }}
+          style={{ width: 25, height: 25, lineHeight: '25px', backgroundColor: grey[0] }}
           icon={<MoreOutlined />}
         />
       </Row>

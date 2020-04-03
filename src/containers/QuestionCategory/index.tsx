@@ -7,6 +7,7 @@ import './index.less';
 import { useSelector } from 'react-redux';
 import { IQuestionModel } from '../../services/Question/interfaces';
 import NoDataCard from '../../components/NoDataCard';
+import { grey } from '@ant-design/colors';
 
 interface CategoryNavigation {
   text: string;
@@ -19,6 +20,7 @@ export type QuestionCategoryPropTypes = {
 };
 
 const QuestionCategory: FC<QuestionCategoryPropTypes> = (props) => {
+  const actionButtonStyle = { width: 25, height: 25, lineHeight: '25px', backgroundColor: grey[0] };
   const { title, navigation } = props;
   const questions: IQuestionModel[] = useSelector((state: any) => state.questions.questions);
   const categories: any = {};
@@ -42,16 +44,10 @@ const QuestionCategory: FC<QuestionCategoryPropTypes> = (props) => {
           <Col>
             <Row gutter={4}>
               <Col>
-                <Avatar
-                  style={{ width: 25, height: 25, lineHeight: '25px', backgroundColor: '#dce0e6' }}
-                  icon={<PlusOutlined />}
-                />
+                <Avatar style={actionButtonStyle} icon={<PlusOutlined />} />
               </Col>
               <Col>
-                <Avatar
-                  style={{ width: 25, height: 25, lineHeight: '25px', backgroundColor: '#dce0e6' }}
-                  icon={<MoreOutlined />}
-                />
+                <Avatar style={actionButtonStyle} icon={<MoreOutlined />} />
               </Col>
             </Row>
           </Col>

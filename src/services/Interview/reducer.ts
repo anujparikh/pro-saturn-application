@@ -44,7 +44,7 @@ export const interviewsReducer = (state: IInterviewState = initialState, action:
       };
     }
     case interviewsActionTypes.DELETE_MULTIPLE: {
-      const interviews = [...state.interviews].filter((q) => action.payload.find(q.id) === -1);
+      const interviews = state.interviews.filter((q) => action.payload.find(q.id) === -1);
       return {
         ...state,
         count: state.count - action.payload.length,

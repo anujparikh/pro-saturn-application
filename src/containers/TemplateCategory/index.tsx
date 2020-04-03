@@ -7,6 +7,7 @@ import TemplateCard from '../../components/TemplateCard';
 import './index.less';
 import NoDataCard from '../../components/NoDataCard';
 import { ITemplateModel } from '../../services/Template/interfaces';
+import { grey } from '@ant-design/colors';
 
 interface CategoryNavigation {
   text: string;
@@ -21,7 +22,7 @@ export type TemplateCategoryPropTypes = {
 const TemplateCategory: FC<TemplateCategoryPropTypes> = (props) => {
   const { title, navigation } = props;
   const templates = useSelector((state: any) => state.templates.templates);
-
+  const actionButtonStyle = { width: 25, height: 25, lineHeight: '25px', backgroundColor: grey[0] };
   return (
     <Card className="template-category" size="small">
       <Row justify="space-between">
@@ -32,16 +33,10 @@ const TemplateCategory: FC<TemplateCategoryPropTypes> = (props) => {
           <Col>
             <Row gutter={4}>
               <Col>
-                <Avatar
-                  style={{ width: 25, height: 25, lineHeight: '25px', backgroundColor: '#dce0e6' }}
-                  icon={<PlusOutlined />}
-                />
+                <Avatar style={actionButtonStyle} icon={<PlusOutlined />} />
               </Col>
               <Col>
-                <Avatar
-                  style={{ width: 25, height: 25, lineHeight: '25px', backgroundColor: '#dce0e6' }}
-                  icon={<MoreOutlined />}
-                />
+                <Avatar style={actionButtonStyle} icon={<MoreOutlined />} />
               </Col>
             </Row>
           </Col>
