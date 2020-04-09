@@ -1,11 +1,12 @@
 import { IQuestionState } from './interfaces';
 import { questionsActionTypes } from './action-types';
+import { dummyQuestions } from './dummy-data';
 
 const initialState: IQuestionState = {
   isLoading: false,
   count: 0,
   unsavedQuestions: [],
-  questions: [],
+  questions: dummyQuestions,
 };
 
 export const questionsReducer = (state: IQuestionState = initialState, action: any) => {

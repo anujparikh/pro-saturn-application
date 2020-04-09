@@ -3,31 +3,47 @@ import SearchSortAndFilter from '../../components/SearchAndFilter';
 import { SearchSortAndFilterPropTypes } from '../../components/SearchAndFilter';
 import './index.less';
 import { Table, Tag, Card, Row, Col, Typography, Empty, Modal } from 'antd';
-import { categories } from './dummy';
 import columns from './table-columns';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { getAllQuestions } from '../../services/Question/actions';
 import AddQuestion from '../../components/AddQuestion';
+import { IQuestionModel } from '../../services/Question/interfaces';
 
-// TODO: set proper prop types for the component
-const QuestionsList: FC = (props: any) => {
-  const { questionsData, isLoading, getAllQuestions, showModalFlag, setShowModalFlag } = props;
+type QuestionsListProps = {
+  showModalFlag: boolean;
+  setShowModalFlag: Function;
+};
+
+const QuestionsList: FC<QuestionsListProps> = (props) => {
+  const { showModalFlag, setShowModalFlag } = props;
+  const dispatch = useDispatch();
+  const questionsData = useSelector((state: any) => state.questions.questions);
+  const isLoading = useSelector((state: any) => state.questions.isLoading);
+
+  const categories: any = {};
+  questionsData.forEach((question: IQuestionModel) => {
+    question.categories.forEach((c) => {
+      if (Object.keys(categories).includes(c)) {
+        categories[c]++;
+      } else {
+        categories[c] = 1;
+      }
+    });
+  });
+
   useEffect(() => {
-    getAllQuestions();
-  }, [getAllQuestions]);
+    dispatch(getAllQuestions());
+  }, [dispatch]);
+
   const searchSortAndFilterProps: SearchSortAndFilterPropTypes = {
     searchPlaceholder: 'search questions',
     filterPlaceholder: 'filter questions by categories',
-  };
-  const handleCancel = () => {
-    setShowModalFlag(false);
   };
   return (
     <div className="questions-list-container">
       <Modal
         title="Add Question"
         visible={showModalFlag}
-        onCancel={handleCancel}
         width={'80%'}
         centered
         closable={false}
@@ -46,9 +62,9 @@ const QuestionsList: FC = (props: any) => {
             <Typography.Text strong>Categories</Typography.Text>
           </Col>
           <Col span={22}>
-            {categories.map((c) => (
-              <Tag key={c.name} className="questions-category-tag" color="blue">
-                {c.name} <span className="question-frequency">{c.no}</span>
+            {Object.keys(categories).map((k: string) => (
+              <Tag key={k} className="questions-category-tag" color="blue">
+                {k} <span className="question-frequency">{categories[k]}</span>
               </Tag>
             ))}
           </Col>
@@ -71,15 +87,4 @@ const QuestionsList: FC = (props: any) => {
   );
 };
 
-const mapStateToProps = (state: any) => {
-  const {
-    questions: { questions: questionsData, isLoading },
-  } = state;
-  return { questionsData, isLoading };
-};
-
-const mapDispatchToProps = (dispatch: any) => ({
-  getAllQuestions: () => dispatch(getAllQuestions()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionsList);
+export default QuestionsList;

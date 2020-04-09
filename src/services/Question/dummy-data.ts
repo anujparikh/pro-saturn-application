@@ -1,5 +1,5 @@
-import { IQuestionModel, DifficultyLevels } from './interfaces';
 import { v4 as uuid } from 'uuid';
+import { DifficultyLevels, IQuestionModel } from './interfaces';
 
 export const dummyQuestions: IQuestionModel[] = [
   {
@@ -103,88 +103,91 @@ export const dummyQuestions: IQuestionModel[] = [
     difficultyLevel: DifficultyLevels.Easy,
     frequency: 8,
   },
-  {
-    id: uuid(),
-    key: uuid(),
-    title: 'Strings java',
-    question: 'Can you explain how Strings are interned in Java?',
-    categories: ['Java'],
-    difficultyLevel: DifficultyLevels.Medium,
-    frequency: 8,
-  },
-  {
-    id: uuid(),
-    key: uuid(),
-    title: 'Explain Java code',
-    question:
-      'Can you describe what the following code does and what parts of memory the local variables, objects, and references to the objects occupy in Java?',
-    categories: ['Java'],
-    difficultyLevel: DifficultyLevels.Hard,
-    frequency: 8,
-  },
-  {
-    id: uuid(),
-    key: uuid(),
-    title: 'Overriding and Polymorphism',
-    question: 'Are overriding & polymorphism applicable to static methods as well?',
-    categories: ['Java'],
-    difficultyLevel: DifficultyLevels.Hard,
-    frequency: 8,
-  },
-  {
-    id: uuid(),
-    key: uuid(),
-    title: 'Static vs Dynamic class',
-    question: 'Explain static vs. dynamic class loading?',
-    categories: ['Java'],
-    difficultyLevel: DifficultyLevels.Medium,
-    frequency: 8,
-  },
-  {
-    id: uuid(),
-    key: uuid(),
-    title: '== vs equals(..)',
-    question:
-      'What is the difference between “==” and “equals(…)” in comparing Java String objects?',
-    categories: ['Java'],
-    difficultyLevel: DifficultyLevels.Easy,
-    frequency: 8,
-  },
-  {
-    id: uuid(),
-    key: uuid(),
-    title: 'Strings java',
-    question: 'Can you explain how Strings are interned in Java?',
-    categories: ['Java'],
-    difficultyLevel: DifficultyLevels.Hard,
-    frequency: 8,
-  },
-  {
-    id: uuid(),
-    key: uuid(),
-    title: 'Explain Java code',
-    question:
-      'Can you describe what the following code does and what parts of memory the local variables, objects, and references to the objects occupy in Java?',
-    categories: ['Java'],
-    difficultyLevel: DifficultyLevels.Easy,
-    frequency: 8,
-  },
-  {
-    id: uuid(),
-    key: uuid(),
-    title: 'Overriding and Polymorphism',
-    question: 'Are overriding & polymorphism applicable to static methods as well?',
-    categories: ['Java'],
-    difficultyLevel: DifficultyLevels.Hard,
-    frequency: 8,
-  },
-  {
-    id: uuid(),
-    key: uuid(),
-    title: 'Static vs Dynamic class',
-    question: 'Explain static vs. dynamic class loading?',
-    categories: ['Java'],
-    difficultyLevel: DifficultyLevels.Hard,
-    frequency: 8,
-  },
+  /**
+   * Commenting below dummy data. Not deleting as it might get used in future
+   */
+  // {
+  //   id: uuid(),
+  //   key: uuid(),
+  //   title: 'Strings java',
+  //   question: 'Can you explain how Strings are interned in Java?',
+  //   categories: ['Java'],
+  //   difficultyLevel: DifficultyLevels.Medium,
+  //   frequency: 8,
+  // },
+  // {
+  //   id: uuid(),
+  //   key: uuid(),
+  //   title: 'Explain Java code',
+  //   question:
+  //     'Can you describe what the following code does and what parts of memory the local variables, objects, and references to the objects occupy in Java?',
+  //   categories: ['Java'],
+  //   difficultyLevel: DifficultyLevels.Hard,
+  //   frequency: 8,
+  // },
+  // {
+  //   id: uuid(),
+  //   key: uuid(),
+  //   title: 'Overriding and Polymorphism',
+  //   question: 'Are overriding & polymorphism applicable to static methods as well?',
+  //   categories: ['Java'],
+  //   difficultyLevel: DifficultyLevels.Hard,
+  //   frequency: 8,
+  // },
+  // {
+  //   id: uuid(),
+  //   key: uuid(),
+  //   title: 'Static vs Dynamic class',
+  //   question: 'Explain static vs. dynamic class loading?',
+  //   categories: ['Java'],
+  //   difficultyLevel: DifficultyLevels.Medium,
+  //   frequency: 8,
+  // },
+  // {
+  //   id: uuid(),
+  //   key: uuid(),
+  //   title: '== vs equals(..)',
+  //   question:
+  //     'What is the difference between “==” and “equals(…)” in comparing Java String objects?',
+  //   categories: ['Java'],
+  //   difficultyLevel: DifficultyLevels.Easy,
+  //   frequency: 8,
+  // },
+  // {
+  //   id: uuid(),
+  //   key: uuid(),
+  //   title: 'Strings java',
+  //   question: 'Can you explain how Strings are interned in Java?',
+  //   categories: ['Java'],
+  //   difficultyLevel: DifficultyLevels.Hard,
+  //   frequency: 8,
+  // },
+  // {
+  //   id: uuid(),
+  //   key: uuid(),
+  //   title: 'Explain Java code',
+  //   question:
+  //     'Can you describe what the following code does and what parts of memory the local variables, objects, and references to the objects occupy in Java?',
+  //   categories: ['Java'],
+  //   difficultyLevel: DifficultyLevels.Easy,
+  //   frequency: 8,
+  // },
+  // {
+  //   id: uuid(),
+  //   key: uuid(),
+  //   title: 'Overriding and Polymorphism',
+  //   question: 'Are overriding & polymorphism applicable to static methods as well?',
+  //   categories: ['Java'],
+  //   difficultyLevel: DifficultyLevels.Hard,
+  //   frequency: 8,
+  // },
+  // {
+  //   id: uuid(),
+  //   key: uuid(),
+  //   title: 'Static vs Dynamic class',
+  //   question: 'Explain static vs. dynamic class loading?',
+  //   categories: ['Java'],
+  //   difficultyLevel: DifficultyLevels.Hard,
+  //   frequency: 8,
+  // },
 ];
