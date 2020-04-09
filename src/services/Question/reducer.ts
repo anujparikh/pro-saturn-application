@@ -28,6 +28,13 @@ export const questionsReducer = (state: IQuestionState = initialState, action: a
         questions: action.payload,
       };
     }
+    case questionsActionTypes.ADD: {
+      return {
+        ...state,
+        count: state.count + 1,
+        questions: [...state.questions, action.payload],
+      };
+    }
     case questionsActionTypes.ADD_UNSAVED: {
       return {
         ...state,

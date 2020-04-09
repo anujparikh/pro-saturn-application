@@ -31,8 +31,9 @@ const QuestionsList: FC = (props: any) => {
         width={'80%'}
         centered
         closable={false}
+        footer={null}
       >
-        <AddQuestion></AddQuestion>
+        <AddQuestion setShowModalFlag={setShowModalFlag}></AddQuestion>
       </Modal>
       <Card>
         <Row className="questions-search-filter">

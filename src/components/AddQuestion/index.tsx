@@ -1,16 +1,50 @@
 import React, { FC } from 'react';
-import { Form, Input, Row, Col, Select, Radio } from 'antd';
+import { Form, Input, Row, Col, Select, Radio, Button, Divider } from 'antd';
 import './index.less';
 import { categories } from './dummy';
-import { DifficultyLevels } from '../../services/Question/interfaces';
+import { DifficultyLevels, IQuestionModel } from '../../services/Question/interfaces';
+import { useDispatch } from 'react-redux';
+import { v4 as uuid } from 'uuid';
+import { addQuestion } from '../../services/Question/actions';
 
-const AddQuestion: FC = (props) => {
+type AddQuestionProps = {
+  setShowModalFlag: Function;
+};
+
+const AddQuestion: FC<AddQuestionProps> = (props) => {
+  const [form] = Form.useForm();
+  const { setShowModalFlag } = props;
   const { Item } = Form;
   const { TextArea } = Input;
   const { Option } = Select;
+  const dispatch = useDispatch();
+
+  const saveQuestion = (values: any) => {
+    const { title, question, difficultyLevel, categories } = values;
+    const inputQuestion: IQuestionModel = {
+      id: uuid(),
+      key: uuid(),
+      title,
+      question,
+      difficultyLevel,
+      categories,
+      frequency: 0,
+    };
+    dispatch(addQuestion(inputQuestion));
+  };
+
+  const onFinish = (values: any) => {
+    saveQuestion(values);
+    setShowModalFlag(false);
+  };
+
+  const addMultipleQuestion = () => {
+    saveQuestion(form.getFieldsValue());
+    setShowModalFlag(true);
+  };
 
   return (
-    <>
+    <Form form={form} onFinish={onFinish}>
       <Row>
         <Col span={15}>
           <Item name="title" rules={[{ required: true, message: 'Please input the title' }]}>
@@ -66,7 +100,25 @@ const AddQuestion: FC = (props) => {
           </Item>
         </Col>
       </Row>
-    </>
+      <Divider></Divider>
+      <Row justify="space-between">
+        <Col>
+          <Button onClick={addMultipleQuestion}>Add Multiple</Button>
+        </Col>
+        <Col>
+          <Row gutter={10}>
+            <Col>
+              <Button onClick={() => setShowModalFlag(false)}>Cancel</Button>
+            </Col>
+            <Col>
+              <Button type="primary" htmlType="submit">
+                Add
+              </Button>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </Form>
   );
 };
 
