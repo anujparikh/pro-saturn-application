@@ -37,7 +37,7 @@ const QuestionsList: FC<QuestionsListProps> = (props) => {
 
   const searchSortAndFilterProps: SearchSortAndFilterPropTypes = {
     searchPlaceholder: 'search questions',
-    filterPlaceholder: 'filter questions by categories',
+    showFilter: false,
   };
   return (
     <div className="questions-list-container">
@@ -52,21 +52,23 @@ const QuestionsList: FC<QuestionsListProps> = (props) => {
         <AddQuestion setShowModalFlag={setShowModalFlag}></AddQuestion>
       </Modal>
       <Card>
-        <Row className="questions-search-filter">
-          <Col span={24}>
+        <Row align="middle">
+          <Col span={12}>
             <SearchSortAndFilter {...searchSortAndFilterProps}></SearchSortAndFilter>
           </Col>
-        </Row>
-        <Row justify="center" align="middle">
-          <Col span={2}>
-            <Typography.Text strong>Categories</Typography.Text>
-          </Col>
-          <Col span={22}>
-            {Object.keys(categories).map((k: string) => (
-              <Tag key={k} className="questions-category-tag" color="blue">
-                {k} <span className="question-frequency">{categories[k]}</span>
-              </Tag>
-            ))}
+          <Col span={12}>
+            <Row align="middle">
+              <Col span={2}>
+                <Typography.Text strong>Categories</Typography.Text>
+              </Col>
+              <Col className="questions-category-tag-container" span={21} offset={1}>
+                {Object.keys(categories).map((k: string) => (
+                  <Tag key={k} className="questions-category-tag" color="blue">
+                    {k} <span className="question-frequency">{categories[k]}</span>
+                  </Tag>
+                ))}
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Card>
