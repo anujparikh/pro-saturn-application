@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import './index.less';
-import TemplatesList from '../../../../containers/TemplatesList';
+import TemplatesList from '../../components/templates-list';
 
 const DisplayComponent: FC = () => {
   return <TemplatesList></TemplatesList>;

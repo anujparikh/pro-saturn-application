@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { Card, Row, Col } from 'antd';
-import ActionCard from '../../components/ActionCard';
+import ActionCard from '../../../../components/ActionCard';
 import columns from './table-columns';
 import './index.less';
 import { useSelector } from 'react-redux';
-import { IInterviewModel } from '../../services/Interview/interfaces';
+import { IInterviewModel } from '../../../../services/interview/interfaces';
 
 const ActionsCategory: FC = () => {
   const interviews: IInterviewModel[] = useSelector((state: any) => state.interviews.interviews);

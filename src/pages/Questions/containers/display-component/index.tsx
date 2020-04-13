@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import './index.less';
-import QuestionsList from '../../../../containers/QuestionsList';
+import QuestionsList from '../../components/questions-list';
 
 const DisplayComponent: FC<any> = (props: any) => {
   return <QuestionsList {...props}></QuestionsList>;

@@ -1,6 +1,6 @@
-import { questionsReducer } from '../services/Question/reducer';
-import { templatesReducer } from '../services/Template/reducer';
-import { interviewsReducer } from '../services/Interview/reducer';
+import { questionsReducer } from '../services/question/reducer';
+import { templatesReducer } from '../services/template/reducer';
+import { interviewsReducer } from '../services/interview/reducer';
 import { combineReducers } from 'redux';
 
 export default combineReducers({

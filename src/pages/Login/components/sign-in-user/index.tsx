@@ -8,9 +8,9 @@ import {
   LinkedinFilled,
 } from '@ant-design/icons';
 import './index.less';
-import Logo from '../Logo';
+import Logo from '../../../../components/Logo';
 
-const SignIn: FC = () => {
+const SignInUser: FC = () => {
   return (
     <>
       <Row className="logo-row" justify="center">
@@ -89,4 +89,4 @@ const SignIn: FC = () => {
   );
 };
 
-export default SignIn;
+export default SignInUser;

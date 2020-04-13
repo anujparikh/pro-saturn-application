@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import SignUp from '../../components/SignUp';
+import SignUpUser from '../../components/sign-up-user';
 
 const Join: FC = () => {
   return (
     <div className="App">
-      <SignUp></SignUp>
+      <SignUpUser></SignUpUser>
     </div>
   );
 };

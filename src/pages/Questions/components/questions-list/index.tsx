@@ -1,13 +1,13 @@
 import React, { FC, useEffect } from 'react';
-import SearchSortAndFilter from '../../components/SearchAndFilter';
-import { SearchSortAndFilterPropTypes } from '../../components/SearchAndFilter';
+import SearchSortAndFilter from '../../../../components/SearchAndFilter';
+import { SearchSortAndFilterPropTypes } from '../../../../components/SearchAndFilter';
 import './index.less';
 import { Table, Tag, Card, Row, Col, Typography, Empty, Modal } from 'antd';
 import columns from './table-columns';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAllQuestions } from '../../services/Question/actions';
-import AddQuestion from '../../components/AddQuestion';
-import { IQuestionModel } from '../../services/Question/interfaces';
+import { getAllQuestions } from '../../../../services/question/actions';
+import AddQuestion from '../add-question';
+import { IQuestionModel } from '../../../../services/question/interfaces';
 
 type QuestionsListProps = {
   showModalFlag: boolean;

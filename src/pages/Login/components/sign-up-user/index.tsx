@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { Card, Form, Input, Button, Row, Col, Typography } from 'antd';
 import './index.less';
-import Logo from '../Logo';
+import Logo from '../../../../components/Logo';
 
-const SignUp: FC = () => {
+const SignUpUser: FC = () => {
   const { Text } = Typography;
   return (
     <>
@@ -120,4 +120,4 @@ const SignUp: FC = () => {
   );
 };
 
-export default SignUp;
+export default SignUpUser;

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import Page from '../../containers/Page';
 import { PagePRPropTypes } from '../../containers/Page';
 import ButtonPR, { ButtonPRPropTypes } from '../../components/ButtonPR';
-import DisplayComponent from './components/DisplayComponent';
+import DisplayComponent from './containers/display-component';
 
 const Dashboard: FC = () => {
   const buttonPRProps: ButtonPRPropTypes = {

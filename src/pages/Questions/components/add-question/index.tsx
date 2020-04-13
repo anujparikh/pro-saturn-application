@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import { Form, Input, Row, Col, Select, Radio, Button, Divider } from 'antd';
 import './index.less';
 import { categories } from './dummy';
-import { DifficultyLevels, IQuestionModel } from '../../services/Question/interfaces';
+import { addQuestion } from '../../../../services/question/actions';
+import { DifficultyLevels, IQuestionModel } from '../../../../services/question/interfaces';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
-import { addQuestion } from '../../services/Question/actions';
 
 type AddQuestionProps = {
   setShowModalFlag: Function;

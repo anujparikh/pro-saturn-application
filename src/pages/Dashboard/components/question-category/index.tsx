@@ -2,11 +2,11 @@ import React, { FC } from 'react';
 import { Card, Row, Col, Avatar } from 'antd';
 import { PlusOutlined, MoreOutlined } from '@ant-design/icons';
 import Text from 'antd/lib/typography/Text';
-import QuestionCard from '../../components/QuestionCard';
+import QuestionCard from '../../../../components/QuestionCard';
 import './index.less';
 import { useSelector } from 'react-redux';
-import { IQuestionModel } from '../../services/Question/interfaces';
-import NoDataCard from '../../components/NoDataCard';
+import { IQuestionModel } from '../../../../services/question/interfaces';
+import NoDataCard from '../../../../components/NoDataCard';
 import { grey } from '@ant-design/colors';
 
 interface CategoryNavigation {

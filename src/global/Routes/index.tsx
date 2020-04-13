@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import Dashboard from '../../pages/Dashboard';
-import Login from '../../pages/Login';
-import Join from '../../pages/Join';
-import Templates from '../../pages/Templates';
-import Questions from '../../pages/Questions';
+import Dashboard from '../../pages/dashboard';
+import Login from '../../pages/login';
+import Join from '../../pages/login/containers/sign-up';
+import Templates from '../../pages/templates';
+import Questions from '../../pages/questions';
 
 const ApplicationRoutes: FC = () => {
   return (
