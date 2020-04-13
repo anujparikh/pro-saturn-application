@@ -16,6 +16,16 @@ export const getAllQuestions = () => {
   };
 };
 
+export const addQuestion = (question: IQuestionModel) => {
+  return (dispatch: Dispatch) => {
+    dispatch({ type: questionsActionTypes.LOADING });
+    return getDummyPromise(question).then((response) => {
+      dispatch({ type: questionsActionTypes.LOADED });
+      dispatch({ type: questionsActionTypes.ADD, payload: response });
+    });
+  };
+};
+
 export const addUnsavedQuestion = (question: IQuestionModel) => {
   return (dispatch: Dispatch) => {
     dispatch({ type: questionsActionTypes.ADD_UNSAVED, payload: question });

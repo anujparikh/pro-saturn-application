@@ -6,9 +6,9 @@ export default [
     width: '15%',
   },
   {
-    title: 'Description',
-    dataIndex: 'description',
-    key: 'description',
+    title: 'Question',
+    dataIndex: 'question',
+    key: 'question',
     width: '40%',
   },
   {

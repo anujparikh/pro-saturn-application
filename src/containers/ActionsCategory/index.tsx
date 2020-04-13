@@ -9,7 +9,7 @@ import { IInterviewModel } from '../../services/Interview/interfaces';
 const ActionsCategory: FC = () => {
   const interviews: IInterviewModel[] = useSelector((state: any) => state.interviews.interviews);
   return (
-    <Card size="small">
+    <Card className="actions-category" size="small">
       <Row>
         {columns.map((column) => {
           return (

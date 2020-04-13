@@ -54,18 +54,20 @@ const QuestionCategory: FC<QuestionCategoryPropTypes> = (props) => {
         )}
       </Row>
       <Row>
-        {categories.length > 0 ? (
-          categories.map((t: any) => {
+        {Object.keys(categories).length !== 0 ? (
+          Object.keys(categories).map((t: any) => {
             return (
-              <Col key={t.id} xl={{ span: 8 }} md={{ span: 12 }} xs={{ span: 24 }}>
-                <QuestionCard title={t.title} questions={t.questions}></QuestionCard>
+              <Col key={t} xl={{ span: 8 }} md={{ span: 12 }} xs={{ span: 24 }}>
+                <QuestionCard
+                  title={t}
+                  questions={categories[t].map((q: any) => q.question)}
+                ></QuestionCard>
               </Col>
             );
           })
         ) : (
           <NoDataCard description="Questions not added"></NoDataCard>
         )}
-        {}
       </Row>
     </Card>
   );

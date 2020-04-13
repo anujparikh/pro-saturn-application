@@ -5,7 +5,8 @@ import './index.less';
 
 export type SearchSortAndFilterPropTypes = {
   searchPlaceholder: string;
-  filterPlaceholder: string;
+  showFilter?: boolean;
+  filterPlaceholder?: string;
   roleTypes?: string[];
   categoryTypes?: string[];
   onChangeOfSortBy?: () => void;
@@ -17,39 +18,49 @@ export type SearchSortAndFilterPropTypes = {
 const SearchSortAndFilter: FC<SearchSortAndFilterPropTypes> = (props) => {
   const { Search } = Input;
   const { Option, OptGroup } = Select;
-  const { roleTypes = [], categoryTypes = [], searchPlaceholder, filterPlaceholder } = props;
+  const {
+    roleTypes = [],
+    categoryTypes = [],
+    searchPlaceholder,
+    filterPlaceholder,
+    showFilter,
+  } = props;
 
   return (
     <Row>
-      <Col span={15}>
+      <Col span={showFilter ? 15 : 23}>
         <Search placeholder={searchPlaceholder}></Search>
       </Col>
-      <Col span={7} offset={1}>
-        <Select
-          className="filter-select"
-          mode="tags"
-          placeholder={filterPlaceholder}
-          suffixIcon={<DeleteOutlined />}
-        >
-          <OptGroup label="Roles">
-            {roleTypes.map((role) => (
-              <Option key={role} value={role}>
-                {role}
-              </Option>
-            ))}
-          </OptGroup>
-          <OptGroup label="Categories">
-            {categoryTypes.map((category) => (
-              <Option key={category} value={category}>
-                {category}
-              </Option>
-            ))}
-          </OptGroup>
-        </Select>
-      </Col>
-      <Col span={1}>
-        <DeleteOutlined className="clear-filters-icon" />
-      </Col>
+      {showFilter && (
+        <>
+          <Col span={7} offset={1}>
+            <Select
+              className="filter-select"
+              mode="tags"
+              placeholder={filterPlaceholder}
+              suffixIcon={<DeleteOutlined />}
+            >
+              <OptGroup label="Roles">
+                {roleTypes.map((role) => (
+                  <Option key={role} value={role}>
+                    {role}
+                  </Option>
+                ))}
+              </OptGroup>
+              <OptGroup label="Categories">
+                {categoryTypes.map((category) => (
+                  <Option key={category} value={category}>
+                    {category}
+                  </Option>
+                ))}
+              </OptGroup>
+            </Select>
+          </Col>
+          <Col span={1}>
+            <DeleteOutlined className="clear-filters-icon" />
+          </Col>
+        </>
+      )}
     </Row>
   );
 };
@@ -57,6 +68,8 @@ const SearchSortAndFilter: FC<SearchSortAndFilterPropTypes> = (props) => {
 SearchSortAndFilter.defaultProps = {
   roleTypes: [],
   categoryTypes: [],
+  showFilter: true,
+  filterPlaceholder: '',
   onChangeOfSortBy: () => {},
   onChangeOfFilterByRoles: () => {},
   onChangeOfFilterByCategories: () => {},

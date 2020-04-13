@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Card, Empty } from 'antd';
+import { Empty } from 'antd';
 import './index.less';
 
 export type NoDataCardProps = {
@@ -9,9 +9,9 @@ export type NoDataCardProps = {
 const NoDataCard: FC<NoDataCardProps> = (props) => {
   const { description } = props;
   return (
-    <Card className="no-data-card" size="small">
+    <div className="no-data-card">
       <Empty description={description}></Empty>
-    </Card>
+    </div>
   );
 };
 

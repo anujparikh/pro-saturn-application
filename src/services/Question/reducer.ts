@@ -1,11 +1,12 @@
 import { IQuestionState } from './interfaces';
 import { questionsActionTypes } from './action-types';
+import { dummyQuestions } from './dummy-data';
 
 const initialState: IQuestionState = {
   isLoading: false,
   count: 0,
   unsavedQuestions: [],
-  questions: [],
+  questions: dummyQuestions,
 };
 
 export const questionsReducer = (state: IQuestionState = initialState, action: any) => {
@@ -26,6 +27,13 @@ export const questionsReducer = (state: IQuestionState = initialState, action: a
       return {
         ...state,
         questions: action.payload,
+      };
+    }
+    case questionsActionTypes.ADD: {
+      return {
+        ...state,
+        count: state.count + 1,
+        questions: [...state.questions, action.payload],
       };
     }
     case questionsActionTypes.ADD_UNSAVED: {
