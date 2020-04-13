@@ -33,7 +33,7 @@ const AddQuestion: FC<AddQuestionProps> = (props) => {
     dispatch(addQuestion(inputQuestion));
   };
 
-  const onFinish = (values: any) => {
+  const onSubmit = (values: any) => {
     saveQuestion(values);
     setShowModalFlag(false);
   };
@@ -44,7 +44,7 @@ const AddQuestion: FC<AddQuestionProps> = (props) => {
   };
 
   return (
-    <Form form={form} onFinish={onFinish}>
+    <Form form={form} onFinish={onSubmit}>
       <Row>
         <Col span={15}>
           <Item name="title" rules={[{ required: true, message: 'Please input the title' }]}>
