@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Card, Row, Col, Avatar } from 'antd';
 import { PlusOutlined, MoreOutlined } from '@ant-design/icons';
 import Text from 'antd/lib/typography/Text';
-import QuestionCard from '../../../../components/QuestionCard';
+import QuestionCard from '../question-card';
 import './index.less';
 import { useSelector } from 'react-redux';
 import { IQuestionModel } from '../../../../services/question/interfaces';

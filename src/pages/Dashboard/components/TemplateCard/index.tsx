@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Card, Row, Col, Typography, Divider, Tag } from 'antd';
 import { LoginOutlined } from '@ant-design/icons';
-import TemplateInfoDisplay from '../TemplateInfoDisplay';
+import TemplateInfoDisplay from '../template-info-display';
 import './index.less';
 
 interface TemplateInfo {
@@ -48,7 +48,7 @@ const TemplateCard: FC<TemplateCardPropTypes> = (props) => {
               </Text>
             </Col>
             <Col span={18} offset={2}>
-              {data.contents?.map((c) => (
+              {data.contents && data.contents.map((c) => (
                 <Tag className="template-categories-tag" key={c}>
                   {c}
                 </Tag>
