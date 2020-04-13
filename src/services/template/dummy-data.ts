@@ -1,59 +1,65 @@
 import { ITemplateModel } from './interfaces';
+import { v4 as uuid } from 'uuid';
 
 export const dummyTemplates: ITemplateModel[] = [
   {
-    id: 1,
+    id: uuid(),
     title: 'Senior Software Engineer',
-    templateInfo: [
-      { count: 8, text: 'used for interviews' },
-      { count: 1, text: 'duration (hrs)' },
-      { count: 3, text: 'categories' },
-    ],
-    content: [
-      { title: 'Categories', contents: ['Architecture', 'Frontend', 'Backend'] },
-      { title: 'Tags', contents: ['Senior', 'Microservices', 'Technical', 'React', 'Typescript'] },
-    ],
+    description: 'Template for senior software engineer',
+    categories: ['Architecture', 'Frontend', 'Backend'],
+    duration: 60,
+    roles: ['Senior Software Engineer'],
+    questions: [],
+    interviews: [],
   },
   {
-    id: 2,
+    id: uuid(),
     title: 'Software Engineer',
-    templateInfo: [
-      { count: 10, text: 'used for interviews' },
-      { count: 1, text: 'duration (hrs)' },
-      { count: 2, text: 'categories' },
-    ],
-    content: [
-      { title: 'Categories', contents: ['Frontend', 'Backend'] },
-      { title: 'Tags', contents: ['Entry', 'Junior', 'Fullstack'] },
-    ],
+    description: 'Template for software engineer',
+    categories: ['Frontend', 'Backend'],
+    duration: 60,
+    roles: ['Software Engineer'],
+    questions: [],
+    interviews: [],
   },
   {
-    id: 3,
+    id: uuid(),
     title: 'Technology Lead',
-    templateInfo: [
-      { count: 3, text: 'used for interviews' },
-      { count: 1.5, text: 'duration (hrs)' },
-      { count: 4, text: 'categories' },
-    ],
-    content: [
-      { title: 'Categories', contents: ['Architecture', 'Frontend', 'Backend', 'DevOps'] },
-      {
-        title: 'Tags',
-        contents: ['Fullstack', 'Cloud', 'AWS', 'Microservices', 'React', 'Webcomponents'],
-      },
-    ],
+    description: 'Template for technology lead',
+    categories: ['Architecture', 'Frontend', 'Backend', 'DevOps'],
+    duration: 90,
+    roles: ['Technology Lead'],
+    questions: [],
+    interviews: [],
   },
   {
-    id: 4,
+    id: uuid(),
     title: 'SSE (telephonic)',
-    templateInfo: [
-      { count: 10, text: 'used for interviews' },
-      { count: 45, text: 'duration (mins)' },
-      { count: 2, text: 'categories' },
-    ],
-    content: [
-      { title: 'Categories', contents: ['Frontend', 'Backend'] },
-      { title: 'Tags', contents: ['Telephonic', 'React', 'Java', 'Algorithms'] },
-    ],
+    description: 'Template for senior software engineer telephonic interview',
+    categories: ['Frontend', 'Backend'],
+    duration: 45,
+    roles: ['Senior Software Engineer'],
+    questions: [],
+    interviews: [],
+  },
+  {
+    id: uuid(),
+    title: 'Software Engineer in Test',
+    description: 'Template for test software engineer ',
+    categories: ['Testing', 'Frontend', 'Selenium', 'Java'],
+    duration: 45,
+    roles: ['Software Engineer in Test'],
+    questions: [],
+    interviews: [],
+  },
+  {
+    id: uuid(),
+    title: 'User Experience (UX)',
+    description: 'Template for User experience interview',
+    categories: ['UX', 'Design'],
+    duration: 60,
+    roles: ['User Experience'],
+    questions: [],
+    interviews: [],
   },
 ];
