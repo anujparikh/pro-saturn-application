@@ -1,17 +1,17 @@
 import React, { FC } from 'react';
-import Page from '../../containers/Page';
-import { PagePRPropTypes } from '../../containers/Page';
-import { ButtonPRPropTypes } from '../../components/ButtonPR';
-import ButtonPR from '../../components/ButtonPR';
+import Page from '../../containers/page';
+import { PagePRPropTypes } from '../../containers/page';
+import ButtonPR, { ButtonPRPropTypes } from '../../components/button-pr';
 import DisplayComponent from './containers/display-component';
 
 const Dashboard: FC = () => {
   const buttonPRProps: ButtonPRPropTypes = {
-    title: 'Pending Feedback',
-    buttonProps: { shape: 'round' as 'round', size: 'small' as 'small' },
+    title: 'Add Template',
+    buttonProps: { type: 'primary' },
+    showBadge: false,
   };
   const pageProps: PagePRPropTypes = {
-    headerTitle: 'Dashboard',
+    headerTitle: 'Templates',
     headerExtra: <ButtonPR {...buttonPRProps}></ButtonPR>,
     displayComponent: <DisplayComponent></DisplayComponent>,
   };

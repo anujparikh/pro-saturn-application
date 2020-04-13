@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Card, Form, Input, Button, Row, Col, Typography } from 'antd';
 import './index.less';
-import Logo from '../../../../components/Logo';
+import Logo from '../../../../components/logo';
 
 const SignUpUser: FC = () => {
   const { Text } = Typography;

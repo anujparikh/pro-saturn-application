@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import SearchSortAndFilter from '../../../../components/SearchAndFilter';
-import { SearchSortAndFilterPropTypes } from '../../../../components/SearchAndFilter';
+import SearchSortAndFilter from '../../../../components/seach-and-filter';
+import { SearchSortAndFilterPropTypes } from '../../../../components/seach-and-filter';
 import { roleTypes, categoryTypes, templateData } from './dummy';
 import columns from './table-columns';
 import './index.less';

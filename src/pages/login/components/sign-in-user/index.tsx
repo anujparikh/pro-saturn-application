@@ -8,7 +8,7 @@ import {
   LinkedinFilled,
 } from '@ant-design/icons';
 import './index.less';
-import Logo from '../../../../components/Logo';
+import Logo from '../../../../components/logo';
 
 const SignInUser: FC = () => {
   return (

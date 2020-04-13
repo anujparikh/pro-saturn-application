@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from 'react';
-import SearchSortAndFilter from '../../../../components/SearchAndFilter';
-import { SearchSortAndFilterPropTypes } from '../../../../components/SearchAndFilter';
+import SearchSortAndFilter from '../../../../components/seach-and-filter';
+import { SearchSortAndFilterPropTypes } from '../../../../components/seach-and-filter';
 import './index.less';
 import { Table, Tag, Card, Row, Col, Typography, Empty, Modal } from 'antd';
 import columns from './table-columns';

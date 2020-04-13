@@ -6,7 +6,7 @@ import QuestionCard from '../question-card';
 import './index.less';
 import { useSelector } from 'react-redux';
 import { IQuestionModel } from '../../../../services/question/interfaces';
-import NoDataCard from '../../../../components/NoDataCard';
+import NoDataCard from '../../../../components/no-data-card';
 import { grey } from '@ant-design/colors';
 
 interface CategoryNavigation {

@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react';
-import Page from '../../containers/Page';
-import { PagePRPropTypes } from '../../containers/Page';
-import { ButtonPRPropTypes } from '../../components/ButtonPR';
-import ButtonPR from '../../components/ButtonPR';
+import Page from '../../containers/page';
+import { PagePRPropTypes } from '../../containers/page';
+import { ButtonPRPropTypes } from '../../components/button-pr';
+import ButtonPR from '../../components/button-pr';
 import DisplayComponent from './containers/display-component';
 
 const Questions: FC = () => {

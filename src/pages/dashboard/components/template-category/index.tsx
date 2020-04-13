@@ -3,9 +3,9 @@ import { Card, Row, Col, Avatar } from 'antd';
 import { PlusOutlined, MoreOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import Text from 'antd/lib/typography/Text';
-import TemplateCard from '../../components/template-card';
+import TemplateCard from '../template-card';
 import './index.less';
-import NoDataCard from '../../../../components/NoDataCard';
+import NoDataCard from '../../../../components/no-data-card';
 import { ITemplateModel } from '../../../../services/template/interfaces';
 import { grey } from '@ant-design/colors';
 

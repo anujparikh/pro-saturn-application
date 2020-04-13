@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import SideBar, { SideBarPropTypes } from '../../components/SideBar';
-import Header from '../../containers/Header';
+import SideBar, { SideBarPropTypes } from '../../components/side-bar';
+import Header from '../header';
 import { Row, Col } from 'antd';
 import {
   DashboardOutlined,

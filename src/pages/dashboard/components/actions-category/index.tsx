@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Card, Row, Col } from 'antd';
-import ActionCard from '../../../../components/ActionCard';
+import ActionCard from '../../../../components/action-card';
 import columns from './table-columns';
 import './index.less';
 import { useSelector } from 'react-redux';

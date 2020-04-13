@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Menu, Row } from 'antd';
 import './index.less';
-import Logo from '../Logo';
-import ProfileMenu from '../ProfileMenu';
+import Logo from '../logo';
+import ProfileMenu from '../profile-menu';
 
 type menuItem = {
   iconComponent: any;
