@@ -32,7 +32,7 @@ const TemplatesList: FC = () => {
       <Card>
         <SearchSortAndFilter {...searchSortAndFilterProps}></SearchSortAndFilter>
       </Card>
-      <Card className="template-table-card">
+      <Card bodyStyle={{ height: '54rem', overflow: 'scroll' }} className="template-table-card">
         {isLoading ? (
           <Spin size="large" style={{ textAlign: 'center', width: '100%' }}></Spin>
         ) : templateData.length === 0 ? (
