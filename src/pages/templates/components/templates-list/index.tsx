@@ -1,13 +1,15 @@
 import React, { FC, useEffect } from 'react';
 import { roleTypes, categoryTypes } from './dummy';
 import './index.less';
-import { Card, Spin, Typography } from 'antd';
+import { Card, Spin, Col, Row } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import SearchSortAndFilter, {
   SearchSortAndFilterPropTypes,
 } from '../../../../components/seach-and-filter';
 import { getAllTemplates } from '../../../../services/template/actions';
 import NoDataCard from '../../../../components/no-data-card';
+import TemplateCard from '../template-card';
+import { ITemplateModel } from '../../../../services/template/interfaces';
 
 const TemplatesList: FC = () => {
   const dispatch = useDispatch();
@@ -36,7 +38,20 @@ const TemplatesList: FC = () => {
         ) : templateData.length === 0 ? (
           <NoDataCard description="Templates not created"></NoDataCard>
         ) : (
-          <Typography>Templates</Typography>
+          <Row gutter={15}>
+            {templateData.map((t: ITemplateModel) => (
+              <Col style={{ marginBottom: 15 }} span={8}>
+                <TemplateCard
+                  title={t.title}
+                  duration={t.duration}
+                  description={t.description}
+                  categories={t.categories}
+                  roles={t.roles}
+                  lastUpdatedAt="3 days ago"
+                ></TemplateCard>
+              </Col>
+            ))}
+          </Row>
         )}
       </Card>
     </div>
