@@ -1,10 +1,11 @@
 import { ITemplateState } from './interfaces';
 import { templatesActionTypes } from './action-types';
+import { dummyTemplates } from './dummy-data';
 
 const initialState: ITemplateState = {
   isLoading: false,
   count: 0,
-  templates: [],
+  templates: dummyTemplates,
 };
 
 export const templatesReducer = (state: ITemplateState = initialState, action: any) => {
@@ -25,6 +26,13 @@ export const templatesReducer = (state: ITemplateState = initialState, action: a
       return {
         ...state,
         templates: action.payload,
+      };
+    }
+    case templatesActionTypes.ADD: {
+      return {
+        ...state,
+        count: state.count + 1,
+        templates: [...state.templates, action.payload],
       };
     }
     case templatesActionTypes.DELETE: {

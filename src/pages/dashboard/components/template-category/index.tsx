@@ -3,11 +3,11 @@ import { Card, Row, Col, Avatar } from 'antd';
 import { PlusOutlined, MoreOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import Text from 'antd/lib/typography/Text';
-import TemplateCard from '../template-card';
+import TemplateCard from '../../components/template-card';
 import './index.less';
+import { grey } from '@ant-design/colors';
 import NoDataCard from '../../../../components/no-data-card';
 import { ITemplateModel } from '../../../../services/template/interfaces';
-import { grey } from '@ant-design/colors';
 
 interface CategoryNavigation {
   text: string;
@@ -49,8 +49,10 @@ const TemplateCategory: FC<TemplateCategoryPropTypes> = (props) => {
               <Col key={t.id} xl={{ span: 6 }} lg={{ span: 8 }} md={{ span: 12 }} xs={{ span: 24 }}>
                 <TemplateCard
                   title={t.title}
-                  templateInfo={t.templateInfo}
-                  contentData={t.content}
+                  noOfInterviews={t.interviews.length}
+                  duration={t.duration}
+                  categories={t.categories}
+                  roles={t.roles}
                 ></TemplateCard>
               </Col>
             );

@@ -1,18 +1,12 @@
-interface ITemplateInfo {
-  count: number;
-  text: string;
-}
-
-interface IContentData {
-  title: string;
-  contents: string[];
-}
-
 export interface ITemplateModel {
-  id: number;
+  id: string;
   title: string;
-  templateInfo: ITemplateInfo[] | [];
-  content: IContentData[] | [];
+  description: string;
+  categories: string[];
+  duration: number;
+  roles: string[];
+  questions: string[];
+  interviews: string[];
 }
 
 export interface ITemplateState {

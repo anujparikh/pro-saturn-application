@@ -16,6 +16,16 @@ export const getAllTemplates = () => {
   };
 };
 
+export const addTemplate = (template: ITemplateModel) => {
+  return (dispatch: Dispatch) => {
+    dispatch({ type: templatesActionTypes.LOADING });
+    return getDummyPromise(template).then((response) => {
+      dispatch({ type: templatesActionTypes.LOADED });
+      dispatch({ type: templatesActionTypes.ADD, payload: response });
+    });
+  };
+};
+
 export const deleteTemplate = (id: number) => {
   return (dispatch: Dispatch) => {
     dispatch({ type: templatesActionTypes.LOADING });

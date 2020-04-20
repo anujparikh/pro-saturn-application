@@ -1,4 +1,5 @@
 module.exports = {
+  '@primary-color': '#bfbfbf',
   '@body-background': '#f9f9f9',
   '@font-size-base': '13px',
   '@font-size-sm': '11px',
